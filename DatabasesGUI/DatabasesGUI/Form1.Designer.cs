@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -35,35 +36,44 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.participantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.participantsTableAdapter = new DatabasesGUI.HorseRacingDataSetTableAdapters.ParticipantsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -145,6 +155,15 @@
             this.tabPage3.Text = "Races";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(871, 359);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dataGridView4);
@@ -154,6 +173,15 @@
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Tracks";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(871, 355);
+            this.dataGridView4.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -165,6 +193,15 @@
             this.tabPage5.Text = "Rides";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowTemplate.Height = 24;
+            this.dataGridView5.Size = new System.Drawing.Size(875, 359);
+            this.dataGridView5.TabIndex = 0;
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.dataGridView6);
@@ -175,6 +212,15 @@
             this.tabPage6.Text = "Gamblers";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowTemplate.Height = 24;
+            this.dataGridView6.Size = new System.Drawing.Size(871, 356);
+            this.dataGridView6.TabIndex = 0;
+            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.dataGridView7);
@@ -184,42 +230,6 @@
             this.tabPage7.TabIndex = 5;
             this.tabPage7.Text = "Bets";
             this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(871, 359);
-            this.dataGridView3.TabIndex = 0;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(871, 355);
-            this.dataGridView4.TabIndex = 0;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 24;
-            this.dataGridView5.Size = new System.Drawing.Size(875, 359);
-            this.dataGridView5.TabIndex = 0;
-            // 
-            // dataGridView6
-            // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(0, 3);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowTemplate.Height = 24;
-            this.dataGridView6.Size = new System.Drawing.Size(871, 356);
-            this.dataGridView6.TabIndex = 0;
             // 
             // dataGridView7
             // 
@@ -252,7 +262,7 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Location = new System.Drawing.Point(169, 13);
+            this.button2.Location = new System.Drawing.Point(635, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 56);
             this.button2.TabIndex = 2;
@@ -260,11 +270,49 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.participantsBindingSource;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(157, 29);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 24);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // participantsBindingSource
+            // 
+            this.participantsBindingSource.DataMember = "Participants";
+            this.participantsBindingSource.DataSource = this.horseRacingDataSet;
+            // 
+            // horseRacingDataSet
+            // 
+            this.horseRacingDataSet.DataSetName = "HorseRacingDataSet";
+            this.horseRacingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(388, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // horseRacingDataSetBindingSource
+            // 
+            this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
+            this.horseRacingDataSetBindingSource.Position = 0;
+            // 
+            // participantsTableAdapter
+            // 
+            this.participantsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 471);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
@@ -277,18 +325,22 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -313,6 +365,12 @@
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dataGridView8;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource horseRacingDataSetBindingSource;
+        private HorseRacingDataSet horseRacingDataSet;
+        private System.Windows.Forms.BindingSource participantsBindingSource;
+        private HorseRacingDataSetTableAdapters.ParticipantsTableAdapter participantsTableAdapter;
     }
 }
 
