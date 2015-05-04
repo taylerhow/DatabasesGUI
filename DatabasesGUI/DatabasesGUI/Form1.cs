@@ -69,6 +69,20 @@ namespace DatabasesGUI
             dataGridView8.DataSource = winningHorsesData;
 
             String x = comboBox1.SelectedValue.ToString();
+            switch (x)
+            {
+                case "WinningHorses":
+                    //do stuff
+                    break;
+                case "BetsFromGamblerName":
+                    //do stuff
+                    break;
+                default:    
+                    //dont do stuff
+                    break;
+
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
