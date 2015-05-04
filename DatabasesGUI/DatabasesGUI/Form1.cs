@@ -69,19 +69,32 @@ namespace DatabasesGUI
             HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
             HorseRacingDataSet.WinningHorsesDataTable winningHorsesData = winningHorsesAdapter.GetData();
             dataGridView8.DataSource = winningHorsesData;
+
+            String x = comboBox1.SelectedValue.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Setup dataGridView
+            dataGridView1.ReadOnly = true;
+            dataGridView2.ReadOnly = true;
+            dataGridView3.ReadOnly = true;
+            dataGridView4.ReadOnly = true;
+            dataGridView5.ReadOnly = true;
+            dataGridView6.ReadOnly = true;
+            dataGridView7.ReadOnly = true;
+            dataGridView8.ReadOnly = true;
+
+            //Populate combobox options
             var dataSource = new List<Language>();
-            dataSource.Add(new Language() { name = "Winning Horses", value = "1" });
-            dataSource.Add(new Language() { name = "All Horses", value = "2" });
-            dataSource.Add(new Language() { name = "All Jockeys", value = "3" });
-            dataSource.Add(new Language() { name = "Winning Jockeys", value = "4" });
-            dataSource.Add(new Language() { name = "Participants in race by race name", value = "5" });
-            dataSource.Add(new Language() { name = "Bets by gambler name", value = "6" });
-            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "7" });
-            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "8" });
+            dataSource.Add(new Language() { name = "Winning Horses", value = "WinningHorses" });
+            dataSource.Add(new Language() { name = "All Horses", value = "AllHorses" });
+            dataSource.Add(new Language() { name = "All Jockeys", value = "AllJockeys" });
+            dataSource.Add(new Language() { name = "Winning Jockeys", value = "WinningJockeys" });
+            dataSource.Add(new Language() { name = "Participants in race by race name", value = "Participants" });
+            dataSource.Add(new Language() { name = "Bets by gambler name", value = "BetsFromGamblerName" });
+            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "" });
+            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "" });
 
             comboBox1.DataSource = dataSource;
             comboBox1.DisplayMember = "name";
@@ -91,22 +104,6 @@ namespace DatabasesGUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-
-            var dataSource = new List<Language>();
-            dataSource.Add(new Language() {name = "Winning Horses", value = "1"});
-            dataSource.Add(new Language() {name = "All Horses", value = "2"});
-            dataSource.Add(new Language() { name = "All Jockeys", value = "3" });
-            dataSource.Add(new Language() { name = "Winning Jockeys", value = "4" });
-            dataSource.Add(new Language() { name = "Participants in race by race name", value = "5" });
-            dataSource.Add(new Language() { name = "Bets by gambler name", value = "6" });
-            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "7" });
-            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "8" });
-
-            comboBox1.DataSource = dataSource;
-            comboBox1.DisplayMember = "name";
-            comboBox1.ValueMember = "value";
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
              
         }
     }
