@@ -16,5 +16,23 @@ namespace DatabasesGUI
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HorseRacingDataSetTableAdapters.HorsesTableAdapter hta = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+
+            HorseRacingDataSet.HorsesDataTable data = hta.GetData();
+
+            dataGridView1.DataSource = data;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HorseRacingDataSetTableAdapters.HorsesTableAdapter hta = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+
+            HorseRacingDataSet.HorsesDataTable data = hta.GetData();
+
+            dataGridView1.DataSource = data;
+        }
     }
 }
