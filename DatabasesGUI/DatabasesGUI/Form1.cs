@@ -167,7 +167,7 @@ namespace DatabasesGUI
                     _dap.Fill(customerTable);
                     _con.Close();
 
-                    dataGridView1.DataSource = customerTable;
+                    dataGridView8.DataSource = customerTable;
                 }
             }
         }

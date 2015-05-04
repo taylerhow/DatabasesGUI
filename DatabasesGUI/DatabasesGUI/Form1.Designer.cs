@@ -263,7 +263,7 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Location = new System.Drawing.Point(635, 13);
+            this.button2.Location = new System.Drawing.Point(631, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 56);
             this.button2.TabIndex = 2;
@@ -309,11 +309,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(809, 29);
+            this.button3.Location = new System.Drawing.Point(809, 14);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 54);
             this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
+            this.button3.Text = "Sproc Test";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
