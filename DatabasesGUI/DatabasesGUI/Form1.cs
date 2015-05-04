@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -146,6 +147,29 @@ namespace DatabasesGUI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
              
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
+
+            using(SqlConnection _con = new SqlConnection(connectionString))
+            {
+                string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+
+                using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                {
+                    DataTable customerTable = new DataTable("Top5Customers");
+
+                    SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+
+                    _con.Open();
+                    _dap.Fill(customerTable);
+                    _con.Close();
+
+                    dataGridView1.DataSource = customerTable;
+                }
+            }
         }
     }
 }
