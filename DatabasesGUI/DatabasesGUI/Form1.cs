@@ -78,7 +78,14 @@ namespace DatabasesGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            dataGridView1.Refresh();
+            dataGridView2.Refresh();
+            dataGridView3.Refresh();
+            dataGridView4.Refresh();
+            dataGridView5.Refresh();
+            dataGridView6.Refresh();
+            dataGridView7.Refresh();
+            dataGridView8.Refresh();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -130,51 +137,51 @@ namespace DatabasesGUI
                 case "BetsFromGamblerName":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        string queryStatement = "EXEC dbo.BetsFromGamblerName @GamblerName = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            DataTable betsTable = new DataTable("Bets From Gambler Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
-                            _dap.Fill(jockeyTable);
+                            _dap.Fill(betsTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = jockeyTable;
+                            dataGridView8.DataSource = betsTable;
                         }
                     }
                     break;
                 case "ParticipantsByID":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        string queryStatement = "EXEC dbo.ParticipantsByID @ParticipantID = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            DataTable participantsByIDTable = new DataTable("Participants by ID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
-                            _dap.Fill(jockeyTable);
+                            _dap.Fill(participantsByIDTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = jockeyTable;
+                            dataGridView8.DataSource = participantsByIDTable;
                         }
                     }
                     break;
                 case "BetsFromGamblerID":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        string queryStatement = "EXEC dbo.BetsFromGamblerID @GamblerID = \"" + textFieldInput + "\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            DataTable betsFromGamlberIDTable = new DataTable("Bets from GamblerID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
-                            _dap.Fill(jockeyTable);
+                            _dap.Fill(betsFromGamlberIDTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = jockeyTable;
+                            dataGridView8.DataSource = betsFromGamlberIDTable;
                         }
                     }
                     break;
