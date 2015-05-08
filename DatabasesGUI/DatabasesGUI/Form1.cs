@@ -65,15 +65,19 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "All Horses", value = "AllHorses" });
             dataSource.Add(new Language() { name = "All Jockeys", value = "AllJockeys" });
             dataSource.Add(new Language() { name = "Winning Jockeys", value = "WinningJockeys" });
-            dataSource.Add(new Language() { name = "Participants in race by race name", value = "Participants" });
-            dataSource.Add(new Language() { name = "Bets by gambler name", value = "BetsFromGamblerName" });
-            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "ParticipantsByID" });
-            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsFromGamblerID" });
+            dataSource.Add(new Language() { name = "Participants in race by race name", value = "ParticipantsByRaceName" });
+            dataSource.Add(new Language() { name = "Bets by gambler name", value = "BetsByGamblerName" });
+            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "ParticipantsByRaceID" });
+            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsByGamblerID" });
 
             comboBox1.DataSource = dataSource;
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "value";
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //Set default textBox options
+            textBox1.Text = "No parameters required";
+            textBox1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,10 +121,10 @@ namespace DatabasesGUI
                     HorseRacingDataSet.WinningJockeysDataTable winningJockeysData = winningJockeysAdapter.GetData();
                     dataGridView8.DataSource = winningJockeysData;
                     break;
-                case "Participants":
+                case "ParticipantsByRaceName":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.Participants @RaceName = \""+textFieldInput+"\"";
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceName @RaceName = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             DataTable participantsTable = new DataTable("Participants by Race Name");
@@ -134,13 +138,13 @@ namespace DatabasesGUI
                         }
                     }
                     break;
-                case "BetsFromGamblerName":
+                case "BetsByGamblerName":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.BetsFromGamblerName @GamblerName = \""+textFieldInput+"\"";
+                        string queryStatement = "EXEC dbo.BetsByGamblerName @GamblerName = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable betsTable = new DataTable("Bets From Gambler Name");
+                            DataTable betsTable = new DataTable("Bets by Gambler Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
@@ -151,13 +155,13 @@ namespace DatabasesGUI
                         }
                     }
                     break;
-                case "ParticipantsByID":
+                case "ParticipantsByRaceID":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.ParticipantsByID @ParticipantID = \""+textFieldInput+"\"";
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceID @RaceID = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable participantsByIDTable = new DataTable("Participants by ID");
+                            DataTable participantsByIDTable = new DataTable("Participants by Race ID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
@@ -168,13 +172,13 @@ namespace DatabasesGUI
                         }
                     }
                     break;
-                case "BetsFromGamblerID":
+                case "BetsByGamblerID":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.BetsFromGamblerID @GamblerID = \"" + textFieldInput + "\"";
+                        string queryStatement = "EXEC dbo.BetsByGamblerID @GamblerID = \"" + textFieldInput + "\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            DataTable betsFromGamlberIDTable = new DataTable("Bets from GamblerID");
+                            DataTable betsFromGamlberIDTable = new DataTable("Bets by GamblerID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
@@ -195,7 +199,35 @@ namespace DatabasesGUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
+            String value = comboBox1.SelectedValue.ToString();
+            switch (value)
+            {
+                case "AllHorses":
+                case "AllJockeys":
+                case "WinningHorses":
+                case "WinningJockeys":
+                    textBox1.Text = "No parameters required";
+                    textBox1.Enabled = false;
+                    break;
+                case "ParticipantsByRaceID":
+                    textBox1.Text = "Enter a RaceID";
+                    textBox1.Enabled = true;
+                    break;
+                case "ParticipantsByRaceName":
+                    textBox1.Text = "Enter a RaceName";
+                    textBox1.Enabled = true;
+                    break;
+                case "BetsByGamblerID":
+                    textBox1.Text = "Enter a GamblerID";
+                    textBox1.Enabled = true;
+                    break;
+                case "BetsByGamblerName":
+                    textBox1.Text = "Enter a GamblerName";
+                    textBox1.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
