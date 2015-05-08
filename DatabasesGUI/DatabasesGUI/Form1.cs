@@ -83,8 +83,12 @@ namespace DatabasesGUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String x = comboBox1.SelectedValue.ToString();
-            switch (x)
+            String comboBoxSelection = comboBox1.SelectedValue.ToString();
+            String textFieldInput = textBox1.Text.ToString();
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
+
+
+            switch (comboBoxSelection)
             {
                 case "WinningHorses":
                     HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
@@ -107,12 +111,68 @@ namespace DatabasesGUI
                     dataGridView8.DataSource = winningJockeysData;
                     break;
                 case "Participants":
+                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+        
+                            _con.Open();
+                            _con.Close();
+
+                        }
+                    }
                     break;
                 case "BetsFromGamblerName":
+                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+        
+                            _con.Open();
+                            _dap.Fill(jockeyTable);
+                            _con.Close();
+
+                            dataGridView8.DataSource = jockeyTable;
+                        }
+                    }
                     break;
                 case "ParticipantsByID":
+                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+        
+                            _con.Open();
+                            _dap.Fill(jockeyTable);
+                            _con.Close();
+
+                            dataGridView8.DataSource = jockeyTable;
+                        }
+                    }
                     break;
                 case "BetsFromGamblerID":
+                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
+                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            DataTable jockeyTable = new DataTable("Top5Jockeys");
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+        
+                            _con.Open();
+                            _dap.Fill(jockeyTable);
+                            _con.Close();
+
+                            dataGridView8.DataSource = jockeyTable;
+                        }
+                    }
                     break;
                 default:
                     //dont do stuff
