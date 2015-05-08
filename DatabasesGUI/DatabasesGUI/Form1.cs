@@ -18,74 +18,6 @@ namespace DatabasesGUI
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //HorseRacingDataSetTableAdapters.HorsesTableAdapter hta = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
-
-            //HorseRacingDataSet.HorsesDataTable data = hta.GetData();
-
-            //dataGridView1.DataSource = data;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
-            HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
-            dataGridView1.DataSource = horsesData;
-
-            HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
-            HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
-            dataGridView2.DataSource = jockeysData;
-
-            HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
-            HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
-            dataGridView3.DataSource = racesData;
-
-            HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
-            HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
-            dataGridView4.DataSource = tracksData;
-
-            HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
-            HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
-            dataGridView5.DataSource = ridesData;
-
-            HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
-            HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
-            dataGridView6.DataSource = gamblersData;
-
-            HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
-            HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
-            dataGridView7.DataSource = betsData;
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
-            HorseRacingDataSet.WinningHorsesDataTable winningHorsesData = winningHorsesAdapter.GetData();
-            dataGridView8.DataSource = winningHorsesData;
-
-            String x = comboBox1.SelectedValue.ToString();
-            switch (x)
-            {
-                case "WinningHorses":
-                    //do stuff
-                    break;
-                case "BetsFromGamblerName":
-                    //do stuff
-                    break;
-                default:    
-                    //dont do stuff
-                    break;
-
-            }
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //Setup dataGridView
@@ -135,13 +67,59 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Winning Jockeys", value = "WinningJockeys" });
             dataSource.Add(new Language() { name = "Participants in race by race name", value = "Participants" });
             dataSource.Add(new Language() { name = "Bets by gambler name", value = "BetsFromGamblerName" });
-            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "" });
-            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "" });
+            dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "ParticipantsByID" });
+            dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsFromGamblerID" });
 
             comboBox1.DataSource = dataSource;
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "value";
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String x = comboBox1.SelectedValue.ToString();
+            switch (x)
+            {
+                case "WinningHorses":
+                    HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
+                    HorseRacingDataSet.WinningHorsesDataTable winningHorsesData = winningHorsesAdapter.GetData();
+                    dataGridView8.DataSource = winningHorsesData;
+                    break;
+                case "AllHorses":
+                    HorseRacingDataSetTableAdapters.AllHorsesTableAdapter allHorsesAdapter = new HorseRacingDataSetTableAdapters.AllHorsesTableAdapter();
+                    HorseRacingDataSet.AllHorsesDataTable allHorsesData = allHorsesAdapter.GetData();
+                    dataGridView8.DataSource = allHorsesData;
+                    break;
+                case "AllJockeys":
+                    HorseRacingDataSetTableAdapters.AllJockeysTableAdapter allJockeysAdapter = new HorseRacingDataSetTableAdapters.AllJockeysTableAdapter();
+                    HorseRacingDataSet.AllJockeysDataTable allJockeysData = allJockeysAdapter.GetData();
+                    dataGridView8.DataSource = allJockeysData;
+                    break;
+                case "WinningJockeys":
+                    HorseRacingDataSetTableAdapters.WinningJockeysTableAdapter winningJockeysAdapter = new HorseRacingDataSetTableAdapters.WinningJockeysTableAdapter();
+                    HorseRacingDataSet.WinningJockeysDataTable winningJockeysData = winningJockeysAdapter.GetData();
+                    dataGridView8.DataSource = winningJockeysData;
+                    break;
+                case "Participants":
+                    break;
+                case "BetsFromGamblerName":
+                    break;
+                case "ParticipantsByID":
+                    break;
+                case "BetsFromGamblerID":
+                    break;
+                default:
+                    //dont do stuff
+                    break;
+
+            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,15 +137,15 @@ namespace DatabasesGUI
 
                 using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                 {
-                    DataTable customerTable = new DataTable("Top5Customers");
+                    DataTable jockeyTable = new DataTable("Top5Jockeys");
 
                     SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
                     _con.Open();
-                    _dap.Fill(customerTable);
+                    _dap.Fill(jockeyTable);
                     _con.Close();
 
-                    dataGridView8.DataSource = customerTable;
+                    dataGridView8.DataSource = jockeyTable;
                 }
             }
         }
