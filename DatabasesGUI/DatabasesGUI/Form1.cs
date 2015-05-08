@@ -113,13 +113,17 @@ namespace DatabasesGUI
                 case "Participants":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
+                        string queryStatement = "EXEC dbo.Participants @RaceName = \""+textFieldInput+"\"";
                         using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
+                            DataTable participantsTable = new DataTable("Participants by Race Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
         
                             _con.Open();
+                            _dap.Fill(participantsTable);
                             _con.Close();
 
+                            dataGridView8.DataSource = participantsTable;
                         }
                     }
                     break;
