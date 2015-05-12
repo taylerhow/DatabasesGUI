@@ -49,11 +49,9 @@
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.participantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.participantsTableAdapter = new DatabasesGUI.HorseRacingDataSetTableAdapters.ParticipantsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -270,18 +267,12 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.participantsBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(157, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // participantsBindingSource
-            // 
-            this.participantsBindingSource.DataMember = "Participants";
-            this.participantsBindingSource.DataSource = this.horseRacingDataSet;
             // 
             // horseRacingDataSet
             // 
@@ -299,10 +290,6 @@
             // 
             this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
             this.horseRacingDataSetBindingSource.Position = 0;
-            // 
-            // participantsTableAdapter
-            // 
-            this.participantsTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -334,7 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -367,8 +353,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource horseRacingDataSetBindingSource;
         private HorseRacingDataSet horseRacingDataSet;
-        private System.Windows.Forms.BindingSource participantsBindingSource;
-        private HorseRacingDataSetTableAdapters.ParticipantsTableAdapter participantsTableAdapter;
     }
 }
 

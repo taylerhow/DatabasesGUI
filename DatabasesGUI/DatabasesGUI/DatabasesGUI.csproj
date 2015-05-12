@@ -55,6 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HorseRacingDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HorseRacingDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HorseRacingDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -74,8 +79,8 @@
     </None>
     <None Include="HorseRacingDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HorseRacingDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>HorseRacingDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="HorseRacingDataSet.xss">
       <DependentUpon>HorseRacingDataSet.xsd</DependentUpon>
