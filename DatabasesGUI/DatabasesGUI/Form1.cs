@@ -229,9 +229,16 @@ namespace DatabasesGUI
                     break;
             }
         }
+    }
+}
+public class Language
+{
+    public string name { get; set; }
+    public string value { get; set; }
+}
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+//Access DB programatically
+/*
             string connectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
 
             using(SqlConnection _con = new SqlConnection(connectionString))
@@ -251,11 +258,4 @@ namespace DatabasesGUI
                     dataGridView8.DataSource = jockeyTable;
                 }
             }
-        }
-    }
-}
-public class Language
-{
-    public string name { get; set; }
-    public string value { get; set; }
-}
+*/
