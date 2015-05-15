@@ -91,7 +91,7 @@
             this.updateAttribute3TextBox = new System.Windows.Forms.TextBox();
             this.updateAttribute2TextBox = new System.Windows.Forms.TextBox();
             this.updateAttribute1TextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.updateTableSelectionLabel = new System.Windows.Forms.Label();
             this.updateTableSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.updateAttribute8ConditionLabel = new System.Windows.Forms.Label();
@@ -576,7 +576,7 @@
             this.tabPage11.Controls.Add(this.updateAttribute3TextBox);
             this.tabPage11.Controls.Add(this.updateAttribute2TextBox);
             this.tabPage11.Controls.Add(this.updateAttribute1TextBox);
-            this.tabPage11.Controls.Add(this.button1);
+            this.tabPage11.Controls.Add(this.updateButton);
             this.tabPage11.Controls.Add(this.updateTableSelectionLabel);
             this.tabPage11.Controls.Add(this.updateTableSelectionComboBox);
             this.tabPage11.Controls.Add(this.updateAttribute8ConditionLabel);
@@ -748,14 +748,14 @@
             this.updateAttribute1TextBox.Size = new System.Drawing.Size(100, 22);
             this.updateAttribute1TextBox.TabIndex = 38;
             // 
-            // button1
+            // updateButton
             // 
-            this.button1.Location = new System.Drawing.Point(565, 429);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
+            this.updateButton.Location = new System.Drawing.Point(565, 429);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 37;
+            this.updateButton.Text = "Insert";
+            this.updateButton.UseVisualStyleBackColor = true;
             // 
             // updateTableSelectionLabel
             // 
@@ -999,7 +999,7 @@
         private System.Windows.Forms.TextBox insertAttribute3TextBox;
         private System.Windows.Forms.TextBox insertAttribute2TextBox;
         private System.Windows.Forms.TextBox insertAttribute1TextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Label updateTableSelectionLabel;
         private System.Windows.Forms.ComboBox updateTableSelectionComboBox;
         private System.Windows.Forms.Label updateAttribute8ConditionLabel;
