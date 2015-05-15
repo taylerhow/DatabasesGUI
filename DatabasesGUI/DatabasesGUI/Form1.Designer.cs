@@ -57,21 +57,21 @@
             this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
             this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.insertAttribute1TextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.insertAttribute2TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute3TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute4TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute5TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute6TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute7TextBox = new System.Windows.Forms.TextBox();
+            this.insertAttribute8TextBox = new System.Windows.Forms.TextBox();
             this.insertAttribute1Label = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.insertAttribute2Label = new System.Windows.Forms.Label();
+            this.insertAttribute3Label = new System.Windows.Forms.Label();
+            this.insertAttribute4Label = new System.Windows.Forms.Label();
+            this.insertAttribute5Label = new System.Windows.Forms.Label();
+            this.label6insertAttribute6Label = new System.Windows.Forms.Label();
+            this.insertAttribute7Label = new System.Windows.Forms.Label();
+            this.insertAttribute8Label = new System.Windows.Forms.Label();
             this.insertTableSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.insertButton = new System.Windows.Forms.Button();
@@ -358,21 +358,21 @@
             this.tabPage2.Controls.Add(this.insertButton);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.insertTableSelectionComboBox);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.insertAttribute8Label);
+            this.tabPage2.Controls.Add(this.insertAttribute7Label);
+            this.tabPage2.Controls.Add(this.label6insertAttribute6Label);
+            this.tabPage2.Controls.Add(this.insertAttribute5Label);
+            this.tabPage2.Controls.Add(this.insertAttribute4Label);
+            this.tabPage2.Controls.Add(this.insertAttribute3Label);
+            this.tabPage2.Controls.Add(this.insertAttribute2Label);
             this.tabPage2.Controls.Add(this.insertAttribute1Label);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.insertAttribute8TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute7TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute6TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute5TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute4TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute3TextBox);
+            this.tabPage2.Controls.Add(this.insertAttribute2TextBox);
             this.tabPage2.Controls.Add(this.insertAttribute1TextBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -428,54 +428,54 @@
             this.insertAttribute1TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute1TextBox.TabIndex = 0;
             // 
-            // textBox2
+            // insertAttribute2TextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 257);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
+            this.insertAttribute2TextBox.Location = new System.Drawing.Point(115, 257);
+            this.insertAttribute2TextBox.Name = "insertAttribute2TextBox";
+            this.insertAttribute2TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute2TextBox.TabIndex = 1;
             // 
-            // textBox3
+            // insertAttribute3TextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(222, 256);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 2;
+            this.insertAttribute3TextBox.Location = new System.Drawing.Point(222, 256);
+            this.insertAttribute3TextBox.Name = "insertAttribute3TextBox";
+            this.insertAttribute3TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute3TextBox.TabIndex = 2;
             // 
-            // textBox4
+            // insertAttribute4TextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(329, 257);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 3;
+            this.insertAttribute4TextBox.Location = new System.Drawing.Point(329, 257);
+            this.insertAttribute4TextBox.Name = "insertAttribute4TextBox";
+            this.insertAttribute4TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute4TextBox.TabIndex = 3;
             // 
-            // textBox5
+            // insertAttribute5TextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(436, 256);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 4;
+            this.insertAttribute5TextBox.Location = new System.Drawing.Point(436, 256);
+            this.insertAttribute5TextBox.Name = "insertAttribute5TextBox";
+            this.insertAttribute5TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute5TextBox.TabIndex = 4;
             // 
-            // textBox6
+            // insertAttribute6TextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(543, 256);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 5;
+            this.insertAttribute6TextBox.Location = new System.Drawing.Point(543, 256);
+            this.insertAttribute6TextBox.Name = "insertAttribute6TextBox";
+            this.insertAttribute6TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute6TextBox.TabIndex = 5;
             // 
-            // textBox7
+            // insertAttribute7TextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(650, 257);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 6;
+            this.insertAttribute7TextBox.Location = new System.Drawing.Point(650, 257);
+            this.insertAttribute7TextBox.Name = "insertAttribute7TextBox";
+            this.insertAttribute7TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute7TextBox.TabIndex = 6;
             // 
-            // textBox8
+            // insertAttribute8TextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(757, 256);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 7;
+            this.insertAttribute8TextBox.Location = new System.Drawing.Point(757, 256);
+            this.insertAttribute8TextBox.Name = "insertAttribute8TextBox";
+            this.insertAttribute8TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute8TextBox.TabIndex = 7;
             // 
             // insertAttribute1Label
             // 
@@ -486,68 +486,68 @@
             this.insertAttribute1Label.TabIndex = 8;
             this.insertAttribute1Label.Text = "Attribute 1";
             // 
-            // label2
+            // insertAttribute2Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 219);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "label2";
+            this.insertAttribute2Label.AutoSize = true;
+            this.insertAttribute2Label.Location = new System.Drawing.Point(112, 219);
+            this.insertAttribute2Label.Name = "insertAttribute2Label";
+            this.insertAttribute2Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute2Label.TabIndex = 9;
+            this.insertAttribute2Label.Text = "Attribute 2";
             // 
-            // label3
+            // insertAttribute3Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.insertAttribute3Label.AutoSize = true;
+            this.insertAttribute3Label.Location = new System.Drawing.Point(219, 219);
+            this.insertAttribute3Label.Name = "insertAttribute3Label";
+            this.insertAttribute3Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute3Label.TabIndex = 10;
+            this.insertAttribute3Label.Text = "Attribute 3";
             // 
-            // label4
+            // insertAttribute4Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(326, 219);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.insertAttribute4Label.AutoSize = true;
+            this.insertAttribute4Label.Location = new System.Drawing.Point(326, 219);
+            this.insertAttribute4Label.Name = "insertAttribute4Label";
+            this.insertAttribute4Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute4Label.TabIndex = 11;
+            this.insertAttribute4Label.Text = "Attribute 4";
             // 
-            // label5
+            // insertAttribute5Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(436, 219);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
+            this.insertAttribute5Label.AutoSize = true;
+            this.insertAttribute5Label.Location = new System.Drawing.Point(436, 219);
+            this.insertAttribute5Label.Name = "insertAttribute5Label";
+            this.insertAttribute5Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute5Label.TabIndex = 12;
+            this.insertAttribute5Label.Text = "Attribute 5";
             // 
-            // label6
+            // label6insertAttribute6Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(540, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
+            this.label6insertAttribute6Label.AutoSize = true;
+            this.label6insertAttribute6Label.Location = new System.Drawing.Point(540, 219);
+            this.label6insertAttribute6Label.Name = "label6insertAttribute6Label";
+            this.label6insertAttribute6Label.Size = new System.Drawing.Size(73, 17);
+            this.label6insertAttribute6Label.TabIndex = 13;
+            this.label6insertAttribute6Label.Text = "Attribute 6";
             // 
-            // label7
+            // insertAttribute7Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(650, 219);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
+            this.insertAttribute7Label.AutoSize = true;
+            this.insertAttribute7Label.Location = new System.Drawing.Point(650, 219);
+            this.insertAttribute7Label.Name = "insertAttribute7Label";
+            this.insertAttribute7Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute7Label.TabIndex = 14;
+            this.insertAttribute7Label.Text = "Attribute 7";
             // 
-            // label8
+            // insertAttribute8Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(757, 219);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "label8";
+            this.insertAttribute8Label.AutoSize = true;
+            this.insertAttribute8Label.Location = new System.Drawing.Point(757, 219);
+            this.insertAttribute8Label.Name = "insertAttribute8Label";
+            this.insertAttribute8Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute8Label.TabIndex = 15;
+            this.insertAttribute8Label.Text = "Attribute 8";
             // 
             // insertTableSelectionComboBox
             // 
@@ -800,21 +800,21 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox insertTableSelectionComboBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label insertAttribute8Label;
+        private System.Windows.Forms.Label insertAttribute7Label;
+        private System.Windows.Forms.Label label6insertAttribute6Label;
+        private System.Windows.Forms.Label insertAttribute5Label;
+        private System.Windows.Forms.Label insertAttribute4Label;
+        private System.Windows.Forms.Label insertAttribute3Label;
+        private System.Windows.Forms.Label insertAttribute2Label;
         private System.Windows.Forms.Label insertAttribute1Label;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox insertAttribute8TextBox;
+        private System.Windows.Forms.TextBox insertAttribute7TextBox;
+        private System.Windows.Forms.TextBox insertAttribute6TextBox;
+        private System.Windows.Forms.TextBox insertAttribute5TextBox;
+        private System.Windows.Forms.TextBox insertAttribute4TextBox;
+        private System.Windows.Forms.TextBox insertAttribute3TextBox;
+        private System.Windows.Forms.TextBox insertAttribute2TextBox;
         private System.Windows.Forms.TextBox insertAttribute1TextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
