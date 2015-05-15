@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
-            this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.storedProcedureParameterTextBox = new System.Windows.Forms.TextBox();
@@ -56,8 +54,8 @@
             this.refreshDataButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).BeginInit();
+            this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
+            this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.viewDataTabControl.SuspendLayout();
@@ -77,17 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.betsTableView)).BeginInit();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storedProcedureResultsTableView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // horseRacingDataSet
-            // 
-            this.horseRacingDataSet.DataSetName = "HorseRacingDataSet";
-            this.horseRacingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // horseRacingDataSetBindingSource
-            // 
-            this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
-            this.horseRacingDataSetBindingSource.Position = 0;
             // 
             // tabControl1
             // 
@@ -129,6 +119,7 @@
             this.storedProcedureComboBox.Name = "storedProcedureComboBox";
             this.storedProcedureComboBox.Size = new System.Drawing.Size(210, 24);
             this.storedProcedureComboBox.TabIndex = 8;
+            this.storedProcedureComboBox.SelectedIndexChanged += new System.EventHandler(this.storedProcedureComboBox_SelectedIndexChanged);
             // 
             // runStoredProcedureButton
             // 
@@ -342,6 +333,16 @@
             this.tabPage11.Text = "Update Data";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
+            // horseRacingDataSet
+            // 
+            this.horseRacingDataSet.DataSetName = "HorseRacingDataSet";
+            this.horseRacingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // horseRacingDataSetBindingSource
+            // 
+            this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
+            this.horseRacingDataSetBindingSource.Position = 0;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,8 +352,6 @@
             this.Name = "MainPage";
             this.Text = "Horse Racing Databse";
             this.Load += new System.EventHandler(this.MainPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -373,6 +372,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.betsTableView)).EndInit();
             this.tabPage10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.storedProcedureResultsTableView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horseRacingDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -216,7 +216,7 @@ namespace DatabasesGUI
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void storedProcedureComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
@@ -248,6 +248,7 @@ namespace DatabasesGUI
                     break;
             }
         }
+
     }
 }
 public class Language
