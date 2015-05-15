@@ -754,7 +754,7 @@
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 23);
             this.updateButton.TabIndex = 37;
-            this.updateButton.Text = "Insert";
+            this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
             // 
             // updateTableSelectionLabel
