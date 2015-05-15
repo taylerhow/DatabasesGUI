@@ -13,6 +13,8 @@ namespace DatabasesGUI
 {
     public partial class MainPage : Form
     {
+        List<TextBox> insertActiveTextBoxes = new List<TextBox>();
+
         public MainPage()
         {
             InitializeComponent();
@@ -85,14 +87,14 @@ namespace DatabasesGUI
                     storedProcedureResultsTableView.DataSource = winningJockeysData;
                     break;
                 case "ParticipantsByRaceName":
-                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.ParticipantsByRaceName @RaceName = \""+textFieldInput+"\"";
-                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceName @RaceName = \"" + textFieldInput + "\"";
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             DataTable participantsTable = new DataTable("Participants by Race Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
-        
+
                             _con.Open();
                             _dap.Fill(participantsTable);
                             _con.Close();
@@ -102,14 +104,14 @@ namespace DatabasesGUI
                     }
                     break;
                 case "BetsByGamblerName":
-                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.BetsByGamblerName @GamblerName = \""+textFieldInput+"\"";
-                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        string queryStatement = "EXEC dbo.BetsByGamblerName @GamblerName = \"" + textFieldInput + "\"";
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             DataTable betsTable = new DataTable("Bets by Gambler Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
-        
+
                             _con.Open();
                             _dap.Fill(betsTable);
                             _con.Close();
@@ -119,14 +121,14 @@ namespace DatabasesGUI
                     }
                     break;
                 case "ParticipantsByRaceID":
-                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.ParticipantsByRaceID @RaceID = \""+textFieldInput+"\"";
-                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceID @RaceID = \"" + textFieldInput + "\"";
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             DataTable participantsByIDTable = new DataTable("Participants by Race ID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
-        
+
                             _con.Open();
                             _dap.Fill(participantsByIDTable);
                             _con.Close();
@@ -136,14 +138,14 @@ namespace DatabasesGUI
                     }
                     break;
                 case "BetsByGamblerID":
-                    using(SqlConnection _con = new SqlConnection(DBconnectionString))
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
                         string queryStatement = "EXEC dbo.BetsByGamblerID @GamblerID = \"" + textFieldInput + "\"";
-                        using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             DataTable betsFromGamlberIDTable = new DataTable("Bets by GamblerID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
-        
+
                             _con.Open();
                             _dap.Fill(betsFromGamlberIDTable);
                             _con.Close();
@@ -191,6 +193,181 @@ namespace DatabasesGUI
                 default:
                     break;
             }
+        }
+
+        private void insertTableSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Label> attributeLabels = new List<Label>();
+            attributeLabels.Add(insertAttribute1Label);
+            attributeLabels.Add(insertAttribute2Label);
+            attributeLabels.Add(insertAttribute3Label);
+            attributeLabels.Add(insertAttribute4Label);
+            attributeLabels.Add(insertAttribute5Label);
+            attributeLabels.Add(insertAttribute6Label);
+            attributeLabels.Add(insertAttribute7Label);
+            attributeLabels.Add(insertAttribute8Label);
+
+            List<TextBox> attributeTextBoxes = new List<TextBox>();
+            attributeTextBoxes.Add(insertAttribute1TextBox);
+            attributeTextBoxes.Add(insertAttribute2TextBox);
+            attributeTextBoxes.Add(insertAttribute3TextBox);
+            attributeTextBoxes.Add(insertAttribute4TextBox);
+            attributeTextBoxes.Add(insertAttribute5TextBox);
+            attributeTextBoxes.Add(insertAttribute6TextBox);
+            attributeTextBoxes.Add(insertAttribute7TextBox);
+            attributeTextBoxes.Add(insertAttribute8TextBox);
+
+            String selectedTable = insertTableSelectionComboBox.SelectedValue.ToString();
+            insertActiveTextBoxes.Clear();
+
+            switch (selectedTable)
+            {
+                case "Horses":
+                    HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+                    HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < horsesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = horsesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Jockeys":
+                    HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
+                    HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < jockeysData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = jockeysData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Races":
+                    HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
+                    HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < racesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = racesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Tracks":
+                    HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
+                    HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < tracksData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = tracksData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Rides":
+                    HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
+                    HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < ridesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = ridesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Gamblers":
+                    HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
+                    HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < gamblersData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = gamblersData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Bets":
+                    HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
+                    HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < betsData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = betsData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            insertActiveTextBoxes.Add(attributeTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                default:
+                    //do nothing
+                    break;
+            }
+
+
         }
 
         //Helper methods
@@ -290,7 +467,54 @@ namespace DatabasesGUI
             insertAttribute7TextBox.Visible = false;
             insertAttribute8TextBox.Visible = false;
         }
+
+        public static string RemoveSpecialCharacters(string str)
+        {
+            Console.WriteLine("Sanitizaing input..");
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_' || c == ' ' || c == '/' || c == '-' || c == '@')
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+
+        private void insertButton_Click(object sender, EventArgs e)
+        {
+            String tableToInsertInto = insertTableSelectionComboBox.SelectedValue.ToString();
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
+
+            switch (tableToInsertInto)
+            {
+                default:
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string queryStatement = "INSERT INTO " + tableToInsertInto + "\nVALUES(";
+                        for (int i = 0; i < insertActiveTextBoxes.Count; i++)
+                        {
+                            queryStatement += "'"+RemoveSpecialCharacters(insertActiveTextBoxes[i].Text)+"'";
+                            if (i != insertActiveTextBoxes.Count - 1)
+                            {
+                                queryStatement += ", ";
+                            }
+                        }
+                        queryStatement += ");";
+                        Console.WriteLine(queryStatement);
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+            }
+        }
     }
+
 }
 public class Language
 {
