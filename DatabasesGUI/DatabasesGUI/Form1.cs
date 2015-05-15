@@ -24,6 +24,7 @@ namespace DatabasesGUI
         {
             setupViewDataTab();
             setupInsertDataTab();
+            setupUpdateDataTab();
         }
 
         private void refreshDataButton_Click(object sender, EventArgs e)
@@ -466,6 +467,48 @@ namespace DatabasesGUI
             insertAttribute6TextBox.Visible = false;
             insertAttribute7TextBox.Visible = false;
             insertAttribute8TextBox.Visible = false;
+        }
+
+        public void setupUpdateDataTab()
+        {
+            var dataSource = new List<Language>();
+            dataSource.Add(new Language() { name = "Horses", value = "Horses" });
+            dataSource.Add(new Language() { name = "Jockeys", value = "Jockeys" });
+            dataSource.Add(new Language() { name = "Races", value = "Races" });
+            dataSource.Add(new Language() { name = "Rides", value = "Rides" });
+            dataSource.Add(new Language() { name = "Tracks", value = "Tracks" });
+            dataSource.Add(new Language() { name = "Gamblers", value = "Gamblers" });
+            dataSource.Add(new Language() { name = "Bets", value = "Bets" });
+
+            updateTableSelectionComboBox.DataSource = dataSource;
+            updateTableSelectionComboBox.DisplayMember = "name";
+            updateTableSelectionComboBox.ValueMember = "value";
+            updateTableSelectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            HorseRacingDataSetTableAdapters.HorsesTableAdapter updateHorsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+            HorseRacingDataSet.HorsesDataTable horsesData = updateHorsesAdapter.GetData();
+
+            insertAttribute1Label.Text = horsesData.Columns[0].ColumnName;
+            insertAttribute2Label.Text = horsesData.Columns[1].ColumnName;
+            insertAttribute3Label.Text = horsesData.Columns[2].ColumnName;
+            insertAttribute4Label.Text = horsesData.Columns[3].ColumnName;
+            insertAttribute5Label.Text = horsesData.Columns[4].ColumnName;
+
+            updateAttribute6Label.Visible = false;
+            updateAttribute7Label.Visible = false;
+            updateAttribute8Label.Visible = false;
+
+            updateAttribute6TextBox.Visible = false;
+            updateAttribute7TextBox.Visible = false;
+            updateAttribute8TextBox.Visible = false;
+
+            updateAttribute6ConditionLabel.Visible = false;
+            updateAttribute7ConditionLabel.Visible = false;
+            updateAttribute8ConditionLabel.Visible = false;
+
+            updateAttribute6ConditionTextBox.Visible = false;
+            updateAttribute7ConditionTextBox.Visible = false;
+            updateAttribute8ConditionTextBox.Visible = false;
         }
 
         public static string RemoveSpecialCharacters(string str)

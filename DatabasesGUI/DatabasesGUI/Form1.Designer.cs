@@ -750,7 +750,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(565, 429);
+            this.updateButton.Location = new System.Drawing.Point(30, 366);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 23);
             this.updateButton.TabIndex = 37;
