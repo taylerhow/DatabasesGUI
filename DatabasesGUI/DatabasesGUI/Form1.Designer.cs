@@ -74,26 +74,44 @@
             this.insertAttribute1TextBox = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
             this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.updateAttribute8Label = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.updateAttribute7Label = new System.Windows.Forms.Label();
+            this.updateAttribute6Label = new System.Windows.Forms.Label();
+            this.updateAttribute5Label = new System.Windows.Forms.Label();
+            this.updateAttribute4Label = new System.Windows.Forms.Label();
+            this.updateAttribute3Label = new System.Windows.Forms.Label();
+            this.updateAttribute2Label = new System.Windows.Forms.Label();
+            this.updateAttribute1Label = new System.Windows.Forms.Label();
+            this.updateAttribute8TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute7TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute6TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute5TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute4TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute3TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute2TextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute1TextBox = new System.Windows.Forms.TextBox();
+            this.updateTableSelectionLabel = new System.Windows.Forms.Label();
+            this.updateTableSelectionComboBox = new System.Windows.Forms.ComboBox();
+            this.updateAttribute8ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute7ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute6ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute5ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute4ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute3ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute2ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute1ConditionLabel = new System.Windows.Forms.Label();
+            this.updateAttribute8ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute7ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute6ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute5ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute4ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute3ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute2ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateAttribute1ConditionTextBox = new System.Windows.Forms.TextBox();
+            this.updateConditionsLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.viewDataTabControl.SuspendLayout();
@@ -417,6 +435,35 @@
             this.insertAttribute8Label.TabIndex = 15;
             this.insertAttribute8Label.Text = "Attribute 8";
             // 
+            this.insertButton.Location = new System.Drawing.Point(543, 394);
+            this.insertButton.Name = "insertButton";
+            this.insertButton.Size = new System.Drawing.Size(75, 23);
+            this.insertButton.TabIndex = 18;
+            this.insertButton.Text = "Insert";
+            this.insertButton.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 17);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Select a table";
+            // 
+            // insertTableSelectionComboBox
+            // 
+            this.insertTableSelectionComboBox.FormattingEnabled = true;
+            this.insertTableSelectionComboBox.Location = new System.Drawing.Point(10, 23);
+            this.insertTableSelectionComboBox.Name = "insertTableSelectionComboBox";
+            this.insertTableSelectionComboBox.Size = new System.Drawing.Size(121, 24);
+            this.insertTableSelectionComboBox.TabIndex = 16;
+            // insertAttribute2TextBox
+            this.insertAttribute2TextBox.Location = new System.Drawing.Point(115, 257);
+            this.insertAttribute2TextBox.Name = "insertAttribute2TextBox";
+            this.insertAttribute2TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute2TextBox.TabIndex = 1;
+            // 
             // insertAttribute7Label
             // 
             this.insertAttribute7Label.AutoSize = true;
@@ -471,6 +518,49 @@
             this.insertAttribute2Label.TabIndex = 9;
             this.insertAttribute2Label.Text = "Attribute 2";
             // 
+            // insertAttribute3TextBox
+            // 
+            this.insertAttribute3TextBox.Location = new System.Drawing.Point(222, 256);
+            this.insertAttribute3TextBox.Name = "insertAttribute3TextBox";
+            this.insertAttribute3TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute3TextBox.TabIndex = 2;
+            // textBox8
+            // 
+            // insertAttribute4TextBox
+            // 
+            this.insertAttribute4TextBox.Location = new System.Drawing.Point(329, 257);
+            this.insertAttribute4TextBox.Name = "insertAttribute4TextBox";
+            this.insertAttribute4TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute4TextBox.TabIndex = 3;
+            // 
+            // insertAttribute5TextBox
+            // 
+            this.insertAttribute5TextBox.Location = new System.Drawing.Point(436, 256);
+            this.insertAttribute5TextBox.Name = "insertAttribute5TextBox";
+            this.insertAttribute5TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute5TextBox.TabIndex = 4;
+            // 
+            // insertAttribute6TextBox
+            // 
+            this.insertAttribute6TextBox.Location = new System.Drawing.Point(543, 256);
+            this.insertAttribute6TextBox.Name = "insertAttribute6TextBox";
+            this.insertAttribute6TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute6TextBox.TabIndex = 5;
+            // 
+            // insertAttribute7TextBox
+            // 
+            this.insertAttribute7TextBox.Location = new System.Drawing.Point(650, 257);
+            this.insertAttribute7TextBox.Name = "insertAttribute7TextBox";
+            this.insertAttribute7TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute7TextBox.TabIndex = 6;
+            // 
+            // insertAttribute8TextBox
+            // 
+            this.insertAttribute8TextBox.Location = new System.Drawing.Point(757, 256);
+            this.insertAttribute8TextBox.Name = "insertAttribute8TextBox";
+            this.insertAttribute8TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute8TextBox.TabIndex = 7;
+            // 
             // insertAttribute1Label
             // 
             this.insertAttribute1Label.AutoSize = true;
@@ -481,6 +571,16 @@
             this.insertAttribute1Label.Text = "Attribute 1";
             // 
             // insertAttribute8TextBox
+            // insertAttribute2Label
+            // 
+            this.insertAttribute2Label.AutoSize = true;
+            this.insertAttribute2Label.Location = new System.Drawing.Point(112, 219);
+            this.insertAttribute2Label.Name = "insertAttribute2Label";
+            this.insertAttribute2Label.Size = new System.Drawing.Size(73, 17);
+            this.insertAttribute2Label.TabIndex = 9;
+            this.insertAttribute2Label.Text = "Attribute 2";
+            // 
+            // insertAttribute3Label
             // 
             this.insertAttribute8TextBox.Location = new System.Drawing.Point(757, 256);
             this.insertAttribute8TextBox.Name = "insertAttribute8TextBox";
@@ -539,24 +639,6 @@
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.button1);
-            this.tabPage11.Controls.Add(this.label1);
-            this.tabPage11.Controls.Add(this.comboBox1);
-            this.tabPage11.Controls.Add(this.label10);
-            this.tabPage11.Controls.Add(this.label11);
-            this.tabPage11.Controls.Add(this.label12);
-            this.tabPage11.Controls.Add(this.label13);
-            this.tabPage11.Controls.Add(this.label14);
-            this.tabPage11.Controls.Add(this.label15);
-            this.tabPage11.Controls.Add(this.label16);
-            this.tabPage11.Controls.Add(this.label17);
-            this.tabPage11.Controls.Add(this.textBox1);
-            this.tabPage11.Controls.Add(this.textBox9);
-            this.tabPage11.Controls.Add(this.textBox10);
-            this.tabPage11.Controls.Add(this.textBox11);
-            this.tabPage11.Controls.Add(this.textBox12);
-            this.tabPage11.Controls.Add(this.textBox13);
-            this.tabPage11.Controls.Add(this.textBox14);
-            this.tabPage11.Controls.Add(this.textBox15);
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
@@ -564,6 +646,195 @@
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Update Data";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // insertAttribute1TextBox
+            // 
+            this.insertAttribute1TextBox.Location = new System.Drawing.Point(8, 257);
+            this.insertAttribute1TextBox.Name = "insertAttribute1TextBox";
+            this.insertAttribute1TextBox.Size = new System.Drawing.Size(100, 22);
+            this.insertAttribute1TextBox.TabIndex = 0;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.updateConditionsLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute8Label);
+            this.tabPage11.Controls.Add(this.label18);
+            this.tabPage11.Controls.Add(this.updateAttribute7Label);
+            this.tabPage11.Controls.Add(this.updateAttribute6Label);
+            this.tabPage11.Controls.Add(this.updateAttribute5Label);
+            this.tabPage11.Controls.Add(this.updateAttribute4Label);
+            this.tabPage11.Controls.Add(this.updateAttribute3Label);
+            this.tabPage11.Controls.Add(this.updateAttribute2Label);
+            this.tabPage11.Controls.Add(this.updateAttribute1Label);
+            this.tabPage11.Controls.Add(this.updateAttribute8TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute7TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute6TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute5TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute4TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute3TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute2TextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute1TextBox);
+            this.tabPage11.Controls.Add(this.button1);
+            this.tabPage11.Controls.Add(this.updateTableSelectionLabel);
+            this.tabPage11.Controls.Add(this.updateTableSelectionComboBox);
+            this.tabPage11.Controls.Add(this.updateAttribute8ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute7ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute6ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute5ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute4ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute3ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute2ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute1ConditionLabel);
+            this.tabPage11.Controls.Add(this.updateAttribute8ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute7ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute6ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute5ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute4ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute3ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute2ConditionTextBox);
+            this.tabPage11.Controls.Add(this.updateAttribute1ConditionTextBox);
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(909, 491);
+            this.tabPage11.TabIndex = 2;
+            this.tabPage11.Text = "Update Data";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // updateAttribute8Label
+            // 
+            this.updateAttribute8Label.AutoSize = true;
+            this.updateAttribute8Label.Location = new System.Drawing.Point(779, 114);
+            this.updateAttribute8Label.Name = "updateAttribute8Label";
+            this.updateAttribute8Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute8Label.TabIndex = 54;
+            this.updateAttribute8Label.Text = "Attribute 8";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(779, 114);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 17);
+            this.label18.TabIndex = 53;
+            // 
+            // updateAttribute7Label
+            // 
+            this.updateAttribute7Label.AutoSize = true;
+            this.updateAttribute7Label.Location = new System.Drawing.Point(672, 114);
+            this.updateAttribute7Label.Name = "updateAttribute7Label";
+            this.updateAttribute7Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute7Label.TabIndex = 52;
+            this.updateAttribute7Label.Text = "Attribute 7";
+            // 
+            // updateAttribute6Label
+            // 
+            this.updateAttribute6Label.AutoSize = true;
+            this.updateAttribute6Label.Location = new System.Drawing.Point(562, 114);
+            this.updateAttribute6Label.Name = "updateAttribute6Label";
+            this.updateAttribute6Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute6Label.TabIndex = 51;
+            this.updateAttribute6Label.Text = "Attribute 6";
+            // 
+            // updateAttribute5Label
+            // 
+            this.updateAttribute5Label.AutoSize = true;
+            this.updateAttribute5Label.Location = new System.Drawing.Point(458, 114);
+            this.updateAttribute5Label.Name = "updateAttribute5Label";
+            this.updateAttribute5Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute5Label.TabIndex = 50;
+            this.updateAttribute5Label.Text = "Attribute 5";
+            // 
+            // updateAttribute4Label
+            // 
+            this.updateAttribute4Label.AutoSize = true;
+            this.updateAttribute4Label.Location = new System.Drawing.Point(348, 114);
+            this.updateAttribute4Label.Name = "updateAttribute4Label";
+            this.updateAttribute4Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute4Label.TabIndex = 49;
+            this.updateAttribute4Label.Text = "Attribute 4";
+            // 
+            // updateAttribute3Label
+            // 
+            this.updateAttribute3Label.AutoSize = true;
+            this.updateAttribute3Label.Location = new System.Drawing.Point(241, 114);
+            this.updateAttribute3Label.Name = "updateAttribute3Label";
+            this.updateAttribute3Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute3Label.TabIndex = 48;
+            this.updateAttribute3Label.Text = "Attribute 3";
+            // 
+            // updateAttribute2Label
+            // 
+            this.updateAttribute2Label.AutoSize = true;
+            this.updateAttribute2Label.Location = new System.Drawing.Point(134, 114);
+            this.updateAttribute2Label.Name = "updateAttribute2Label";
+            this.updateAttribute2Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute2Label.TabIndex = 47;
+            this.updateAttribute2Label.Text = "Attribute 2";
+            // 
+            // updateAttribute1Label
+            // 
+            this.updateAttribute1Label.AutoSize = true;
+            this.updateAttribute1Label.Location = new System.Drawing.Point(29, 114);
+            this.updateAttribute1Label.Name = "updateAttribute1Label";
+            this.updateAttribute1Label.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute1Label.TabIndex = 46;
+            this.updateAttribute1Label.Text = "Attribute 1";
+            // 
+            // updateAttribute8TextBox
+            // 
+            this.updateAttribute8TextBox.Location = new System.Drawing.Point(779, 151);
+            this.updateAttribute8TextBox.Name = "updateAttribute8TextBox";
+            this.updateAttribute8TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute8TextBox.TabIndex = 45;
+            // 
+            // updateAttribute7TextBox
+            // 
+            this.updateAttribute7TextBox.Location = new System.Drawing.Point(672, 152);
+            this.updateAttribute7TextBox.Name = "updateAttribute7TextBox";
+            this.updateAttribute7TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute7TextBox.TabIndex = 44;
+            // 
+            // updateAttribute6TextBox
+            // 
+            this.updateAttribute6TextBox.Location = new System.Drawing.Point(565, 151);
+            this.updateAttribute6TextBox.Name = "updateAttribute6TextBox";
+            this.updateAttribute6TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute6TextBox.TabIndex = 43;
+            // 
+            // updateAttribute5TextBox
+            // 
+            this.updateAttribute5TextBox.Location = new System.Drawing.Point(458, 151);
+            this.updateAttribute5TextBox.Name = "updateAttribute5TextBox";
+            this.updateAttribute5TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute5TextBox.TabIndex = 42;
+            // 
+            // updateAttribute4TextBox
+            // 
+            this.updateAttribute4TextBox.Location = new System.Drawing.Point(351, 152);
+            this.updateAttribute4TextBox.Name = "updateAttribute4TextBox";
+            this.updateAttribute4TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute4TextBox.TabIndex = 41;
+            // 
+            // updateAttribute3TextBox
+            // 
+            this.updateAttribute3TextBox.Location = new System.Drawing.Point(244, 151);
+            this.updateAttribute3TextBox.Name = "updateAttribute3TextBox";
+            this.updateAttribute3TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute3TextBox.TabIndex = 40;
+            // 
+            // updateAttribute2TextBox
+            // 
+            this.updateAttribute2TextBox.Location = new System.Drawing.Point(137, 152);
+            this.updateAttribute2TextBox.Name = "updateAttribute2TextBox";
+            this.updateAttribute2TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute2TextBox.TabIndex = 39;
+            // 
+            // updateAttribute1TextBox
+            // 
+            this.updateAttribute1TextBox.Location = new System.Drawing.Point(30, 152);
+            this.updateAttribute1TextBox.Name = "updateAttribute1TextBox";
+            this.updateAttribute1TextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute1TextBox.TabIndex = 38;
             // 
             // button1
             // 
@@ -574,150 +845,169 @@
             this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // updateTableSelectionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Select a table";
+            this.updateTableSelectionLabel.AutoSize = true;
+            this.updateTableSelectionLabel.Location = new System.Drawing.Point(27, 14);
+            this.updateTableSelectionLabel.Name = "updateTableSelectionLabel";
+            this.updateTableSelectionLabel.Size = new System.Drawing.Size(94, 17);
+            this.updateTableSelectionLabel.TabIndex = 36;
+            this.updateTableSelectionLabel.Text = "Select a table";
             // 
-            // comboBox1
+            // updateTableSelectionComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 35;
+            this.updateTableSelectionComboBox.FormattingEnabled = true;
+            this.updateTableSelectionComboBox.Location = new System.Drawing.Point(30, 34);
+            this.updateTableSelectionComboBox.Name = "updateTableSelectionComboBox";
+            this.updateTableSelectionComboBox.Size = new System.Drawing.Size(121, 24);
+            this.updateTableSelectionComboBox.TabIndex = 35;
             // 
-            // label10
+            // updateAttribute8ConditionLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(779, 254);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "label10";
+            this.updateAttribute8ConditionLabel.AutoSize = true;
+            this.updateAttribute8ConditionLabel.Location = new System.Drawing.Point(779, 264);
+            this.updateAttribute8ConditionLabel.Name = "updateAttribute8ConditionLabel";
+            this.updateAttribute8ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute8ConditionLabel.TabIndex = 34;
+            this.updateAttribute8ConditionLabel.Text = "Attribute 8";
             // 
-            // label11
+            // updateAttribute7ConditionLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(672, 254);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 17);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "label11";
+            this.updateAttribute7ConditionLabel.AutoSize = true;
+            this.updateAttribute7ConditionLabel.Location = new System.Drawing.Point(672, 264);
+            this.updateAttribute7ConditionLabel.Name = "updateAttribute7ConditionLabel";
+            this.updateAttribute7ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute7ConditionLabel.TabIndex = 33;
+            this.updateAttribute7ConditionLabel.Text = "Attribute 7";
             // 
-            // label12
+            // updateAttribute6ConditionLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(562, 254);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 17);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "label12";
+            this.updateAttribute6ConditionLabel.AutoSize = true;
+            this.updateAttribute6ConditionLabel.Location = new System.Drawing.Point(562, 264);
+            this.updateAttribute6ConditionLabel.Name = "updateAttribute6ConditionLabel";
+            this.updateAttribute6ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute6ConditionLabel.TabIndex = 32;
+            this.updateAttribute6ConditionLabel.Text = "Attribute 6";
             // 
-            // label13
+            // updateAttribute5ConditionLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(458, 254);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "label13";
+            this.updateAttribute5ConditionLabel.AutoSize = true;
+            this.updateAttribute5ConditionLabel.Location = new System.Drawing.Point(458, 264);
+            this.updateAttribute5ConditionLabel.Name = "updateAttribute5ConditionLabel";
+            this.updateAttribute5ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute5ConditionLabel.TabIndex = 31;
+            this.updateAttribute5ConditionLabel.Text = "Attribute 5";
             // 
-            // label14
+            // updateAttribute4ConditionLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(348, 254);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 17);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "label14";
+            this.updateAttribute4ConditionLabel.AutoSize = true;
+            this.updateAttribute4ConditionLabel.Location = new System.Drawing.Point(348, 264);
+            this.updateAttribute4ConditionLabel.Name = "updateAttribute4ConditionLabel";
+            this.updateAttribute4ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute4ConditionLabel.TabIndex = 30;
+            this.updateAttribute4ConditionLabel.Text = "Attribute 4";
             // 
-            // label15
+            // updateAttribute3ConditionLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(241, 254);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "label15";
+            this.updateAttribute3ConditionLabel.AutoSize = true;
+            this.updateAttribute3ConditionLabel.Location = new System.Drawing.Point(241, 264);
+            this.updateAttribute3ConditionLabel.Name = "updateAttribute3ConditionLabel";
+            this.updateAttribute3ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute3ConditionLabel.TabIndex = 29;
+            this.updateAttribute3ConditionLabel.Text = "Attribute 3";
             // 
-            // label16
+            // updateAttribute2ConditionLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(134, 254);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 17);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "label16";
+            this.updateAttribute2ConditionLabel.AutoSize = true;
+            this.updateAttribute2ConditionLabel.Location = new System.Drawing.Point(134, 264);
+            this.updateAttribute2ConditionLabel.Name = "updateAttribute2ConditionLabel";
+            this.updateAttribute2ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute2ConditionLabel.TabIndex = 28;
+            this.updateAttribute2ConditionLabel.Text = "Attribute 2";
             // 
-            // label17
+            // updateAttribute1ConditionLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 254);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 17);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "Attribute 1";
+            this.updateAttribute1ConditionLabel.AutoSize = true;
+            this.updateAttribute1ConditionLabel.Location = new System.Drawing.Point(29, 264);
+            this.updateAttribute1ConditionLabel.Name = "updateAttribute1ConditionLabel";
+            this.updateAttribute1ConditionLabel.Size = new System.Drawing.Size(73, 17);
+            this.updateAttribute1ConditionLabel.TabIndex = 27;
+            this.updateAttribute1ConditionLabel.Text = "Attribute 1";
             // 
-            // textBox1
+            // updateAttribute8ConditionTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(779, 291);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 26;
+            this.updateAttribute8ConditionTextBox.Location = new System.Drawing.Point(778, 301);
+            this.updateAttribute8ConditionTextBox.Name = "updateAttribute8ConditionTextBox";
+            this.updateAttribute8ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute8ConditionTextBox.TabIndex = 26;
             // 
-            // textBox9
+            // updateAttribute7ConditionTextBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(672, 292);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 25;
+            this.updateAttribute7ConditionTextBox.Location = new System.Drawing.Point(672, 302);
+            this.updateAttribute7ConditionTextBox.Name = "updateAttribute7ConditionTextBox";
+            this.updateAttribute7ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute7ConditionTextBox.TabIndex = 25;
             // 
-            // textBox10
+            // updateAttribute6ConditionTextBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(565, 291);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 24;
+            this.updateAttribute6ConditionTextBox.Location = new System.Drawing.Point(565, 301);
+            this.updateAttribute6ConditionTextBox.Name = "updateAttribute6ConditionTextBox";
+            this.updateAttribute6ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute6ConditionTextBox.TabIndex = 24;
             // 
-            // textBox11
+            // updateAttribute5ConditionTextBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(458, 291);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 23;
+            this.updateAttribute5ConditionTextBox.Location = new System.Drawing.Point(458, 301);
+            this.updateAttribute5ConditionTextBox.Name = "updateAttribute5ConditionTextBox";
+            this.updateAttribute5ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute5ConditionTextBox.TabIndex = 23;
             // 
-            // textBox12
+            // updateAttribute4ConditionTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(351, 292);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 22);
-            this.textBox12.TabIndex = 22;
+            this.updateAttribute4ConditionTextBox.Location = new System.Drawing.Point(351, 302);
+            this.updateAttribute4ConditionTextBox.Name = "updateAttribute4ConditionTextBox";
+            this.updateAttribute4ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute4ConditionTextBox.TabIndex = 22;
             // 
-            // textBox13
+            // updateAttribute3ConditionTextBox
             // 
-            this.textBox13.Location = new System.Drawing.Point(244, 291);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 22);
-            this.textBox13.TabIndex = 21;
+            this.updateAttribute3ConditionTextBox.Location = new System.Drawing.Point(244, 301);
+            this.updateAttribute3ConditionTextBox.Name = "updateAttribute3ConditionTextBox";
+            this.updateAttribute3ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute3ConditionTextBox.TabIndex = 21;
             // 
-            // textBox14
+            // updateAttribute2ConditionTextBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(137, 292);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
-            this.textBox14.TabIndex = 20;
+            this.updateAttribute2ConditionTextBox.Location = new System.Drawing.Point(137, 302);
+            this.updateAttribute2ConditionTextBox.Name = "updateAttribute2ConditionTextBox";
+            this.updateAttribute2ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute2ConditionTextBox.TabIndex = 20;
             // 
-            // textBox15
+            // updateAttribute1ConditionTextBox
             // 
-            this.textBox15.Location = new System.Drawing.Point(30, 292);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 22);
-            this.textBox15.TabIndex = 19;
+            this.updateAttribute1ConditionTextBox.Location = new System.Drawing.Point(30, 302);
+            this.updateAttribute1ConditionTextBox.Name = "updateAttribute1ConditionTextBox";
+            this.updateAttribute1ConditionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateAttribute1ConditionTextBox.TabIndex = 19;
+            // 
+            // horseRacingDataSet
+            // 
+            this.horseRacingDataSet.DataSetName = "HorseRacingDataSet";
+            this.horseRacingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // horseRacingDataSetBindingSource
+            // 
+            this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
+            this.horseRacingDataSetBindingSource.Position = 0;
+            // 
+            // updateConditionsLabel
+            // 
+            this.updateConditionsLabel.AutoSize = true;
+            this.updateConditionsLabel.Location = new System.Drawing.Point(27, 222);
+            this.updateConditionsLabel.Name = "updateConditionsLabel";
+            this.updateConditionsLabel.Size = new System.Drawing.Size(128, 17);
+            this.updateConditionsLabel.TabIndex = 55;
+            this.updateConditionsLabel.Text = "Update Conditions:";
             // 
             // horseRacingDataSet
             // 
@@ -817,24 +1107,42 @@
         private System.Windows.Forms.TextBox insertAttribute2TextBox;
         private System.Windows.Forms.TextBox insertAttribute1TextBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label updateTableSelectionLabel;
+        private System.Windows.Forms.ComboBox updateTableSelectionComboBox;
+        private System.Windows.Forms.Label updateAttribute8ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute7ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute6ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute5ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute4ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute3ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute2ConditionLabel;
+        private System.Windows.Forms.Label updateAttribute1ConditionLabel;
+        private System.Windows.Forms.TextBox updateAttribute8ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute7ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute6ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute5ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute4ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute3ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute2ConditionTextBox;
+        private System.Windows.Forms.TextBox updateAttribute1ConditionTextBox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label updateAttribute7Label;
+        private System.Windows.Forms.Label updateAttribute6Label;
+        private System.Windows.Forms.Label updateAttribute5Label;
+        private System.Windows.Forms.Label updateAttribute4Label;
+        private System.Windows.Forms.Label updateAttribute3Label;
+        private System.Windows.Forms.Label updateAttribute2Label;
+        private System.Windows.Forms.Label updateAttribute1Label;
+        private System.Windows.Forms.TextBox updateAttribute8TextBox;
+        private System.Windows.Forms.TextBox updateAttribute7TextBox;
+        private System.Windows.Forms.TextBox updateAttribute6TextBox;
+        private System.Windows.Forms.TextBox updateAttribute5TextBox;
+        private System.Windows.Forms.TextBox updateAttribute4TextBox;
+        private System.Windows.Forms.TextBox updateAttribute3TextBox;
+        private System.Windows.Forms.TextBox updateAttribute2TextBox;
+        private System.Windows.Forms.TextBox updateAttribute1TextBox;
+        private System.Windows.Forms.Label updateAttribute8Label;
+        private System.Windows.Forms.Label updateConditionsLabel;
     }
 }
 
