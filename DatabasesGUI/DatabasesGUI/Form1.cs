@@ -11,53 +11,53 @@ using System.Windows.Forms;
 
 namespace DatabasesGUI
 {
-    public partial class Form1 : Form
+    public partial class MainPage : Form
     {
-        public Form1()
+        public MainPage()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainPage_Load(object sender, EventArgs e)
         {
             //Setup dataGridView
-            dataGridView1.ReadOnly = true;
-            dataGridView2.ReadOnly = true;
-            dataGridView3.ReadOnly = true;
-            dataGridView4.ReadOnly = true;
-            dataGridView5.ReadOnly = true;
-            dataGridView6.ReadOnly = true;
-            dataGridView7.ReadOnly = true;
-            dataGridView8.ReadOnly = true;
+            horsesTableView.ReadOnly = true;
+            jockeysTableView.ReadOnly = true;
+            racesTableView.ReadOnly = true;
+            tracksTableView.ReadOnly = true;
+            ridesTableView.ReadOnly = true;
+            gamblersTableView.ReadOnly = true;
+            betsTableView.ReadOnly = true;
+            storedProcedureResultsTableView.ReadOnly = true;
 
             //Populate grid View
             HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
             HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
-            dataGridView1.DataSource = horsesData;
+            horsesTableView.DataSource = horsesData;
 
             HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
             HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
-            dataGridView2.DataSource = jockeysData;
+            jockeysTableView.DataSource = jockeysData;
 
             HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
             HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
-            dataGridView3.DataSource = racesData;
+            racesTableView.DataSource = racesData;
 
             HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
             HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
-            dataGridView4.DataSource = tracksData;
+            tracksTableView.DataSource = tracksData;
 
             HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
             HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
-            dataGridView5.DataSource = ridesData;
+            ridesTableView.DataSource = ridesData;
 
             HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
             HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
-            dataGridView6.DataSource = gamblersData;
+            gamblersTableView.DataSource = gamblersData;
 
             HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
             HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
-            dataGridView7.DataSource = betsData;
+            betsTableView.DataSource = betsData;
 
             //Populate combobox options
             var dataSource = new List<Language>();
@@ -70,32 +70,51 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "ParticipantsByRaceID" });
             dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsByGamblerID" });
 
-            comboBox1.DataSource = dataSource;
-            comboBox1.DisplayMember = "name";
-            comboBox1.ValueMember = "value";
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            storedProcedureComboBox.DataSource = dataSource;
+            storedProcedureComboBox.DisplayMember = "name";
+            storedProcedureComboBox.ValueMember = "value";
+            storedProcedureComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //Set default textBox options
-            textBox1.Text = "No parameters required";
-            textBox1.Enabled = false;
+            storedProcedureParameterTextBox.Text = "No parameters required";
+            storedProcedureParameterTextBox.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void refreshDataButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.Refresh();
-            dataGridView2.Refresh();
-            dataGridView3.Refresh();
-            dataGridView4.Refresh();
-            dataGridView5.Refresh();
-            dataGridView6.Refresh();
-            dataGridView7.Refresh();
-            dataGridView8.Refresh();
+            HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+            HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
+            horsesTableView.DataSource = horsesData;
+
+            HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
+            HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
+            jockeysTableView.DataSource = jockeysData;
+
+            HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
+            HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
+            racesTableView.DataSource = racesData;
+
+            HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
+            HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
+            tracksTableView.DataSource = tracksData;
+
+            HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
+            HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
+            ridesTableView.DataSource = ridesData;
+
+            HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
+            HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
+            gamblersTableView.DataSource = gamblersData;
+
+            HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
+            HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
+            betsTableView.DataSource = betsData;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void runStoredProcedureButton_Click(object sender, EventArgs e)
         {
-            String comboBoxSelection = comboBox1.SelectedValue.ToString();
-            String textFieldInput = textBox1.Text.ToString();
+            String comboBoxSelection = storedProcedureComboBox.SelectedValue.ToString();
+            String textFieldInput = storedProcedureParameterTextBox.Text.ToString();
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
 
 
@@ -104,22 +123,22 @@ namespace DatabasesGUI
                 case "WinningHorses":
                     HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
                     HorseRacingDataSet.WinningHorsesDataTable winningHorsesData = winningHorsesAdapter.GetData();
-                    dataGridView8.DataSource = winningHorsesData;
+                    storedProcedureResultsTableView.DataSource = winningHorsesData;
                     break;
                 case "AllHorses":
                     HorseRacingDataSetTableAdapters.AllHorsesTableAdapter allHorsesAdapter = new HorseRacingDataSetTableAdapters.AllHorsesTableAdapter();
                     HorseRacingDataSet.AllHorsesDataTable allHorsesData = allHorsesAdapter.GetData();
-                    dataGridView8.DataSource = allHorsesData;
+                    storedProcedureResultsTableView.DataSource = allHorsesData;
                     break;
                 case "AllJockeys":
                     HorseRacingDataSetTableAdapters.AllJockeysTableAdapter allJockeysAdapter = new HorseRacingDataSetTableAdapters.AllJockeysTableAdapter();
                     HorseRacingDataSet.AllJockeysDataTable allJockeysData = allJockeysAdapter.GetData();
-                    dataGridView8.DataSource = allJockeysData;
+                    storedProcedureResultsTableView.DataSource = allJockeysData;
                     break;
                 case "WinningJockeys":
                     HorseRacingDataSetTableAdapters.WinningJockeysTableAdapter winningJockeysAdapter = new HorseRacingDataSetTableAdapters.WinningJockeysTableAdapter();
                     HorseRacingDataSet.WinningJockeysDataTable winningJockeysData = winningJockeysAdapter.GetData();
-                    dataGridView8.DataSource = winningJockeysData;
+                    storedProcedureResultsTableView.DataSource = winningJockeysData;
                     break;
                 case "ParticipantsByRaceName":
                     using(SqlConnection _con = new SqlConnection(DBconnectionString))
@@ -134,7 +153,7 @@ namespace DatabasesGUI
                             _dap.Fill(participantsTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = participantsTable;
+                            storedProcedureResultsTableView.DataSource = participantsTable;
                         }
                     }
                     break;
@@ -151,7 +170,7 @@ namespace DatabasesGUI
                             _dap.Fill(betsTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = betsTable;
+                            storedProcedureResultsTableView.DataSource = betsTable;
                         }
                     }
                     break;
@@ -168,7 +187,7 @@ namespace DatabasesGUI
                             _dap.Fill(participantsByIDTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = participantsByIDTable;
+                            storedProcedureResultsTableView.DataSource = participantsByIDTable;
                         }
                     }
                     break;
@@ -185,7 +204,7 @@ namespace DatabasesGUI
                             _dap.Fill(betsFromGamlberIDTable);
                             _con.Close();
 
-                            dataGridView8.DataSource = betsFromGamlberIDTable;
+                            storedProcedureResultsTableView.DataSource = betsFromGamlberIDTable;
                         }
                     }
                     break;
@@ -199,31 +218,31 @@ namespace DatabasesGUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String value = comboBox1.SelectedValue.ToString();
+            String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
             {
                 case "AllHorses":
                 case "AllJockeys":
                 case "WinningHorses":
                 case "WinningJockeys":
-                    textBox1.Text = "No parameters required";
-                    textBox1.Enabled = false;
+                    storedProcedureParameterTextBox.Text = "No parameters required";
+                    storedProcedureParameterTextBox.Enabled = false;
                     break;
                 case "ParticipantsByRaceID":
-                    textBox1.Text = "Enter a RaceID";
-                    textBox1.Enabled = true;
+                    storedProcedureParameterTextBox.Text = "Enter a RaceID";
+                    storedProcedureParameterTextBox.Enabled = true;
                     break;
                 case "ParticipantsByRaceName":
-                    textBox1.Text = "Enter a RaceName";
-                    textBox1.Enabled = true;
+                    storedProcedureParameterTextBox.Text = "Enter a RaceName";
+                    storedProcedureParameterTextBox.Enabled = true;
                     break;
                 case "BetsByGamblerID":
-                    textBox1.Text = "Enter a GamblerID";
-                    textBox1.Enabled = true;
+                    storedProcedureParameterTextBox.Text = "Enter a GamblerID";
+                    storedProcedureParameterTextBox.Enabled = true;
                     break;
                 case "BetsByGamblerName":
-                    textBox1.Text = "Enter a GamblerName";
-                    textBox1.Enabled = true;
+                    storedProcedureParameterTextBox.Text = "Enter a GamblerName";
+                    storedProcedureParameterTextBox.Enabled = true;
                     break;
                 default:
                     break;
