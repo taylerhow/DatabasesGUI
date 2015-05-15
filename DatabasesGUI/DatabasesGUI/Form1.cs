@@ -14,6 +14,7 @@ namespace DatabasesGUI
     public partial class MainPage : Form
     {
         List<TextBox> insertActiveTextBoxes = new List<TextBox>();
+        List<TextBox> updateActiveTextBoxes = new List<TextBox>();
 
         public MainPage()
         {
@@ -488,11 +489,11 @@ namespace DatabasesGUI
             HorseRacingDataSetTableAdapters.HorsesTableAdapter updateHorsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
             HorseRacingDataSet.HorsesDataTable horsesData = updateHorsesAdapter.GetData();
 
-            insertAttribute1Label.Text = horsesData.Columns[0].ColumnName;
-            insertAttribute2Label.Text = horsesData.Columns[1].ColumnName;
-            insertAttribute3Label.Text = horsesData.Columns[2].ColumnName;
-            insertAttribute4Label.Text = horsesData.Columns[3].ColumnName;
-            insertAttribute5Label.Text = horsesData.Columns[4].ColumnName;
+            updateAttribute1Label.Text = horsesData.Columns[0].ColumnName;
+            updateAttribute2Label.Text = horsesData.Columns[1].ColumnName;
+            updateAttribute3Label.Text = horsesData.Columns[2].ColumnName;
+            updateAttribute4Label.Text = horsesData.Columns[3].ColumnName;
+            updateAttribute5Label.Text = horsesData.Columns[4].ColumnName;
 
             updateAttribute6Label.Visible = false;
             updateAttribute7Label.Visible = false;
@@ -538,7 +539,7 @@ namespace DatabasesGUI
                         string queryStatement = "INSERT INTO " + tableToInsertInto + "\nVALUES(";
                         for (int i = 0; i < insertActiveTextBoxes.Count; i++)
                         {
-                            queryStatement += "'"+RemoveSpecialCharacters(insertActiveTextBoxes[i].Text)+"'";
+                            queryStatement += "'" + RemoveSpecialCharacters(insertActiveTextBoxes[i].Text) + "'";
                             if (i != insertActiveTextBoxes.Count - 1)
                             {
                                 queryStatement += ", ";
@@ -553,6 +554,250 @@ namespace DatabasesGUI
                             _con.Close();
                         }
                     }
+                    break;
+            }
+        }
+
+        private void updateTableSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Label> attributeLabels = new List<Label>();
+            attributeLabels.Add(updateAttribute1Label);
+            attributeLabels.Add(updateAttribute2Label);
+            attributeLabels.Add(updateAttribute3Label);
+            attributeLabels.Add(updateAttribute4Label);
+            attributeLabels.Add(updateAttribute5Label);
+            attributeLabels.Add(updateAttribute6Label);
+            attributeLabels.Add(updateAttribute7Label);
+            attributeLabels.Add(updateAttribute8Label);
+
+            List<TextBox> attributeTextBoxes = new List<TextBox>();
+            attributeTextBoxes.Add(updateAttribute1TextBox);
+            attributeTextBoxes.Add(updateAttribute2TextBox);
+            attributeTextBoxes.Add(updateAttribute3TextBox);
+            attributeTextBoxes.Add(updateAttribute4TextBox);
+            attributeTextBoxes.Add(updateAttribute5TextBox);
+            attributeTextBoxes.Add(updateAttribute6TextBox);
+            attributeTextBoxes.Add(updateAttribute7TextBox);
+            attributeTextBoxes.Add(updateAttribute8TextBox);
+
+            List<Label> attributeConditionLabels = new List<Label>();
+            attributeConditionLabels.Add(updateAttribute1ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute2ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute3ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute4ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute5ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute6ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute7ConditionLabel);
+            attributeConditionLabels.Add(updateAttribute8ConditionLabel);
+
+            List<TextBox> attributeConditionTextBoxes = new List<TextBox>();
+            attributeConditionTextBoxes.Add(updateAttribute1ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute2ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute3ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute4ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute5ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute6ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute7ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute8ConditionTextBox);
+
+            String selectedTable = insertTableSelectionComboBox.SelectedValue.ToString();
+            updateActiveTextBoxes.Clear();
+
+            switch (selectedTable)
+            {
+                case "Horses":
+                    HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+                    HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < horsesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = horsesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = horsesData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                            
+                            
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Jockeys":
+                    HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
+                    HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < jockeysData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = jockeysData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = jockeysData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Races":
+                    HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
+                    HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < racesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = racesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = racesData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Tracks":
+                    HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
+                    HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < tracksData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = tracksData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = tracksData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Rides":
+                    HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
+                    HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < ridesData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = ridesData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = ridesData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Gamblers":
+                    HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
+                    HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < gamblersData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = gamblersData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = gamblersData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                case "Bets":
+                    HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
+                    HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
+
+                    for (int i = 0; i < attributeLabels.Count; i++)
+                    {
+                        if (i < betsData.Columns.Count)
+                        {
+                            attributeLabels[i].Text = betsData.Columns[i].ColumnName;
+                            attributeLabels[i].Visible = true;
+                            attributeTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeTextBoxes[i]);
+
+                            attributeConditionLabels[i].Text = betsData.Columns[i].ColumnName;
+                            attributeConditionLabels[i].Visible = true;
+                            attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
+                        }
+                        else
+                        {
+                            attributeLabels[i].Visible = false;
+                            attributeTextBoxes[i].Visible = false;
+                            attributeConditionLabels[i].Visible = false;
+                            attributeConditionTextBoxes[i].Visible = false;
+                        }
+                    }
+                    break;
+                default:
+                    //do nothing
                     break;
             }
         }

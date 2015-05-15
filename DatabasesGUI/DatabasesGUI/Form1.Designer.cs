@@ -773,6 +773,7 @@
             this.updateTableSelectionComboBox.Name = "updateTableSelectionComboBox";
             this.updateTableSelectionComboBox.Size = new System.Drawing.Size(121, 24);
             this.updateTableSelectionComboBox.TabIndex = 35;
+            this.updateTableSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.updateTableSelectionComboBox_SelectedIndexChanged);
             // 
             // updateAttribute8ConditionLabel
             // 
