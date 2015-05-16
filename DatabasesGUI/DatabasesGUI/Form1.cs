@@ -600,7 +600,7 @@ namespace DatabasesGUI
             attributeConditionTextBoxes.Add(updateAttribute7ConditionTextBox);
             attributeConditionTextBoxes.Add(updateAttribute8ConditionTextBox);
 
-            String selectedTable = insertTableSelectionComboBox.SelectedValue.ToString();
+            String selectedTable = updateTableSelectionComboBox.SelectedValue.ToString();
             updateActiveTextBoxes.Clear();
 
             switch (selectedTable)
