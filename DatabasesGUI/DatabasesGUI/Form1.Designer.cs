@@ -402,7 +402,7 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(543, 394);
+            this.insertButton.Location = new System.Drawing.Point(26, 259);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(75, 23);
             this.insertButton.TabIndex = 18;
@@ -413,7 +413,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 3);
+            this.label9.Location = new System.Drawing.Point(30, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 17);
             this.label9.TabIndex = 17;
@@ -422,7 +422,7 @@
             // insertTableSelectionComboBox
             // 
             this.insertTableSelectionComboBox.FormattingEnabled = true;
-            this.insertTableSelectionComboBox.Location = new System.Drawing.Point(10, 23);
+            this.insertTableSelectionComboBox.Location = new System.Drawing.Point(26, 37);
             this.insertTableSelectionComboBox.Name = "insertTableSelectionComboBox";
             this.insertTableSelectionComboBox.Size = new System.Drawing.Size(121, 24);
             this.insertTableSelectionComboBox.TabIndex = 16;
@@ -431,7 +431,7 @@
             // insertAttribute8Label
             // 
             this.insertAttribute8Label.AutoSize = true;
-            this.insertAttribute8Label.Location = new System.Drawing.Point(757, 219);
+            this.insertAttribute8Label.Location = new System.Drawing.Point(776, 142);
             this.insertAttribute8Label.Name = "insertAttribute8Label";
             this.insertAttribute8Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute8Label.TabIndex = 15;
@@ -440,7 +440,7 @@
             // insertAttribute7Label
             // 
             this.insertAttribute7Label.AutoSize = true;
-            this.insertAttribute7Label.Location = new System.Drawing.Point(650, 219);
+            this.insertAttribute7Label.Location = new System.Drawing.Point(669, 142);
             this.insertAttribute7Label.Name = "insertAttribute7Label";
             this.insertAttribute7Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute7Label.TabIndex = 14;
@@ -449,7 +449,7 @@
             // insertAttribute6Label
             // 
             this.insertAttribute6Label.AutoSize = true;
-            this.insertAttribute6Label.Location = new System.Drawing.Point(540, 219);
+            this.insertAttribute6Label.Location = new System.Drawing.Point(559, 142);
             this.insertAttribute6Label.Name = "insertAttribute6Label";
             this.insertAttribute6Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute6Label.TabIndex = 13;
@@ -458,7 +458,7 @@
             // insertAttribute5Label
             // 
             this.insertAttribute5Label.AutoSize = true;
-            this.insertAttribute5Label.Location = new System.Drawing.Point(436, 219);
+            this.insertAttribute5Label.Location = new System.Drawing.Point(455, 142);
             this.insertAttribute5Label.Name = "insertAttribute5Label";
             this.insertAttribute5Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute5Label.TabIndex = 12;
@@ -467,7 +467,7 @@
             // insertAttribute4Label
             // 
             this.insertAttribute4Label.AutoSize = true;
-            this.insertAttribute4Label.Location = new System.Drawing.Point(326, 219);
+            this.insertAttribute4Label.Location = new System.Drawing.Point(345, 142);
             this.insertAttribute4Label.Name = "insertAttribute4Label";
             this.insertAttribute4Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute4Label.TabIndex = 11;
@@ -476,7 +476,7 @@
             // insertAttribute3Label
             // 
             this.insertAttribute3Label.AutoSize = true;
-            this.insertAttribute3Label.Location = new System.Drawing.Point(219, 219);
+            this.insertAttribute3Label.Location = new System.Drawing.Point(238, 142);
             this.insertAttribute3Label.Name = "insertAttribute3Label";
             this.insertAttribute3Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute3Label.TabIndex = 10;
@@ -485,7 +485,7 @@
             // insertAttribute2Label
             // 
             this.insertAttribute2Label.AutoSize = true;
-            this.insertAttribute2Label.Location = new System.Drawing.Point(112, 219);
+            this.insertAttribute2Label.Location = new System.Drawing.Point(131, 142);
             this.insertAttribute2Label.Name = "insertAttribute2Label";
             this.insertAttribute2Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute2Label.TabIndex = 9;
@@ -494,7 +494,7 @@
             // insertAttribute1Label
             // 
             this.insertAttribute1Label.AutoSize = true;
-            this.insertAttribute1Label.Location = new System.Drawing.Point(7, 219);
+            this.insertAttribute1Label.Location = new System.Drawing.Point(26, 142);
             this.insertAttribute1Label.Name = "insertAttribute1Label";
             this.insertAttribute1Label.Size = new System.Drawing.Size(73, 17);
             this.insertAttribute1Label.TabIndex = 8;
@@ -502,56 +502,56 @@
             // 
             // insertAttribute8TextBox
             // 
-            this.insertAttribute8TextBox.Location = new System.Drawing.Point(757, 256);
+            this.insertAttribute8TextBox.Location = new System.Drawing.Point(776, 179);
             this.insertAttribute8TextBox.Name = "insertAttribute8TextBox";
             this.insertAttribute8TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute8TextBox.TabIndex = 7;
             // 
             // insertAttribute7TextBox
             // 
-            this.insertAttribute7TextBox.Location = new System.Drawing.Point(650, 257);
+            this.insertAttribute7TextBox.Location = new System.Drawing.Point(669, 180);
             this.insertAttribute7TextBox.Name = "insertAttribute7TextBox";
             this.insertAttribute7TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute7TextBox.TabIndex = 6;
             // 
             // insertAttribute6TextBox
             // 
-            this.insertAttribute6TextBox.Location = new System.Drawing.Point(543, 256);
+            this.insertAttribute6TextBox.Location = new System.Drawing.Point(562, 179);
             this.insertAttribute6TextBox.Name = "insertAttribute6TextBox";
             this.insertAttribute6TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute6TextBox.TabIndex = 5;
             // 
             // insertAttribute5TextBox
             // 
-            this.insertAttribute5TextBox.Location = new System.Drawing.Point(436, 256);
+            this.insertAttribute5TextBox.Location = new System.Drawing.Point(455, 179);
             this.insertAttribute5TextBox.Name = "insertAttribute5TextBox";
             this.insertAttribute5TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute5TextBox.TabIndex = 4;
             // 
             // insertAttribute4TextBox
             // 
-            this.insertAttribute4TextBox.Location = new System.Drawing.Point(329, 257);
+            this.insertAttribute4TextBox.Location = new System.Drawing.Point(348, 180);
             this.insertAttribute4TextBox.Name = "insertAttribute4TextBox";
             this.insertAttribute4TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute4TextBox.TabIndex = 3;
             // 
             // insertAttribute3TextBox
             // 
-            this.insertAttribute3TextBox.Location = new System.Drawing.Point(222, 256);
+            this.insertAttribute3TextBox.Location = new System.Drawing.Point(241, 179);
             this.insertAttribute3TextBox.Name = "insertAttribute3TextBox";
             this.insertAttribute3TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute3TextBox.TabIndex = 2;
             // 
             // insertAttribute2TextBox
             // 
-            this.insertAttribute2TextBox.Location = new System.Drawing.Point(115, 257);
+            this.insertAttribute2TextBox.Location = new System.Drawing.Point(134, 180);
             this.insertAttribute2TextBox.Name = "insertAttribute2TextBox";
             this.insertAttribute2TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute2TextBox.TabIndex = 1;
             // 
             // insertAttribute1TextBox
             // 
-            this.insertAttribute1TextBox.Location = new System.Drawing.Point(8, 257);
+            this.insertAttribute1TextBox.Location = new System.Drawing.Point(27, 180);
             this.insertAttribute1TextBox.Name = "insertAttribute1TextBox";
             this.insertAttribute1TextBox.Size = new System.Drawing.Size(100, 22);
             this.insertAttribute1TextBox.TabIndex = 0;
