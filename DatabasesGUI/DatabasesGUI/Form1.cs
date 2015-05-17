@@ -834,7 +834,7 @@ namespace DatabasesGUI
 
             String tableToInsertInto = updateTableSelectionComboBox.SelectedValue.ToString();
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
-        
+
             using (SqlConnection _con = new SqlConnection(DBconnectionString))
             {
                 string queryStatement = "UPDATE " + tableToInsertInto + "\nSET ";
@@ -845,10 +845,10 @@ namespace DatabasesGUI
                         {
                             if (updateActiveTextBoxes[i].Text != "")
                             {
-                                if (i != 0) queryStatement += ", ";
                                 queryStatement += betsData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
                             }
                         }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
                         queryStatement += "\nWHERE";
                         for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
                         {
@@ -857,112 +857,128 @@ namespace DatabasesGUI
                                 queryStatement += " " + betsData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
                         }
-                            break;
-                        case "Gamblers":
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        break;
+                    case "Gamblers":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
                             {
-                                if (updateActiveTextBoxes[i].Text != "") {
-                                    if (i != 0) queryStatement += ", ";
-                                    queryStatement += gamblersData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
+                                queryStatement += gamblersData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
                             }
-                            queryStatement += "\nWHERE";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement += " " + gamblersData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += " " + gamblersData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
-                            break;
-                        case "Rides":
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
-                                if (updateActiveTextBoxes[i].Text != "") {
-                                    if (i != 0) queryStatement += ", ";
-                                    queryStatement += ridesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
-                            }
-                            queryStatement += "\nWHERE";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        break;
+                    case "Rides":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement += " " + ridesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += ridesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
                             }
-                            break;
-                        case "Tracks":
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
-                            if (updateActiveTextBoxes[i].Text != "") {
-                                if (i != 0)  queryStatement += ", ";
-                                queryStatement += tracksData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
-                            }
-                            queryStatement += "\nWHERE";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement +=  " " + tracksData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += " " + ridesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
-                            break;
-                        case "Races":
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
-                                if (updateActiveTextBoxes[i].Text != "") {
-                                    if (i != 0) queryStatement += ", ";
+                        }
+                        break;
+                    case "Tracks":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
+                            {
+                                queryStatement += tracksData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "',";
+                            }
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
+                            {
+                                queryStatement += " " + tracksData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                            }
+                        }
+                        break;
+                    case "Races":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
+                            {
                                 queryStatement += racesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
                             }
-                            queryStatement += "\nWHERE ";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE ";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement += " " + racesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += " " + racesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
-                            break;
-                        case "Jockeys":
-                            Console.WriteLine("Active boxes count: " + updateActiveTextBoxes.Count);
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
-                                if (updateActiveTextBoxes[i].Text != ""){
-                                    if (i != 0)  queryStatement += ", ";
+                        }
+                        break;
+                    case "Jockeys":
+                        Console.WriteLine("Active boxes count: " + updateActiveTextBoxes.Count);
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
+                            {
                                 queryStatement += jockeysData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
                             }
-                            queryStatement += "\nWHERE ";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE ";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement += " " + jockeysData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += " " + jockeysData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
-                            break;
-                        case "Horses":
-                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
-                                if (updateActiveTextBoxes[i].Text != "") {
-                                    if (i != 0) queryStatement += ", ";
+                        }
+                        break;
+                    case "Horses":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
+                            {
                                 queryStatement += horsesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
-                                }
                             }
-                            queryStatement += "\nWHERE ";
-                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        }
+                        if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                        queryStatement += "\nWHERE ";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                if (updateActiveConditionTextBoxes[j].Text != "")
-                                {
-                                    queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
-                                }
+                                queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
-                            break;
-                        default:
-                            break;
-                    }
+                        }
+                        break;
+                    default:
+                        break;
+                }
                 if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
                 queryStatement += ";";
                 Console.WriteLine(queryStatement);
-                              
+                using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                {
+                    _con.Open();
+                    _cmd.ExecuteNonQuery();
+                    _con.Close();
+                }
             }
         }
     }
