@@ -15,6 +15,7 @@ namespace DatabasesGUI
     {
         List<TextBox> insertActiveTextBoxes = new List<TextBox>();
         List<TextBox> updateActiveTextBoxes = new List<TextBox>();
+        List<TextBox> updateActiveConditionTextBoxes = new List<TextBox>();
 
         public MainPage()
         {
@@ -621,9 +622,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = horsesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
-                            
-                            
                         }
                         else
                         {
@@ -650,7 +648,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = jockeysData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -677,7 +674,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = racesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -704,7 +700,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = tracksData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -731,7 +726,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = ridesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -758,7 +752,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = gamblersData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -785,7 +778,6 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = betsData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
-                            updateActiveTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -799,6 +791,178 @@ namespace DatabasesGUI
                 default:
                     //do nothing
                     break;
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            HorseRacingDataSetTableAdapters.BetsTableAdapter betsAdapter = new HorseRacingDataSetTableAdapters.BetsTableAdapter();
+            HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.GamblersTableAdapter gamblersAdapter = new HorseRacingDataSetTableAdapters.GamblersTableAdapter();
+            HorseRacingDataSet.GamblersDataTable gamblersData = gamblersAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.RidesTableAdapter ridesAdapter = new HorseRacingDataSetTableAdapters.RidesTableAdapter();
+            HorseRacingDataSet.RidesDataTable ridesData = ridesAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.TracksTableAdapter tracksAdapter = new HorseRacingDataSetTableAdapters.TracksTableAdapter();
+            HorseRacingDataSet.TracksDataTable tracksData = tracksAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.RacesTableAdapter racesAdapter = new HorseRacingDataSetTableAdapters.RacesTableAdapter();
+            HorseRacingDataSet.RacesDataTable racesData = racesAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.JockeysTableAdapter jockeysAdapter = new HorseRacingDataSetTableAdapters.JockeysTableAdapter();
+            HorseRacingDataSet.JockeysDataTable jockeysData = jockeysAdapter.GetData();
+
+            HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
+            HorseRacingDataSet.HorsesDataTable horsesData = horsesAdapter.GetData();
+
+            List<TextBox> attributeConditionTextBoxes = new List<TextBox>();
+            attributeConditionTextBoxes.Add(updateAttribute1ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute2ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute3ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute4ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute5ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute6ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute7ConditionTextBox);
+            attributeConditionTextBoxes.Add(updateAttribute8ConditionTextBox);
+
+            for (int i = 0; i < attributeConditionTextBoxes.Count; i++)
+            {
+                if (attributeConditionTextBoxes[i].Text != "") updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
+            }
+
+            String tableToInsertInto = updateTableSelectionComboBox.SelectedValue.ToString();
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
+        
+            using (SqlConnection _con = new SqlConnection(DBconnectionString))
+            {
+                string queryStatement = "UPDATE " + tableToInsertInto + "\nSET ";
+                switch (tableToInsertInto)
+                {
+                    case "Bets":
+                        for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                        {
+                            if (updateActiveTextBoxes[i].Text != "")
+                            {
+                                if (i != 0) queryStatement += ", ";
+                                queryStatement += betsData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                            }
+                        }
+                        queryStatement += "\nWHERE";
+                        for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                        {
+                            if (updateActiveConditionTextBoxes[j].Text != "")
+                            {
+                                queryStatement += " " + betsData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                            }
+                        }
+                            break;
+                        case "Gamblers":
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++)
+                            {
+                                if (updateActiveTextBoxes[i].Text != "") {
+                                    if (i != 0) queryStatement += ", ";
+                                    queryStatement += gamblersData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement += " " + gamblersData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        case "Rides":
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
+                                if (updateActiveTextBoxes[i].Text != "") {
+                                    if (i != 0) queryStatement += ", ";
+                                    queryStatement += ridesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement += " " + ridesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        case "Tracks":
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
+                            if (updateActiveTextBoxes[i].Text != "") {
+                                if (i != 0)  queryStatement += ", ";
+                                queryStatement += tracksData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement +=  " " + tracksData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        case "Races":
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
+                                if (updateActiveTextBoxes[i].Text != "") {
+                                    if (i != 0) queryStatement += ", ";
+                                queryStatement += racesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE ";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement += " " + racesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        case "Jockeys":
+                            Console.WriteLine("Active boxes count: " + updateActiveTextBoxes.Count);
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
+                                if (updateActiveTextBoxes[i].Text != ""){
+                                    if (i != 0)  queryStatement += ", ";
+                                queryStatement += jockeysData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE ";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement += " " + jockeysData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        case "Horses":
+                            for (int i = 0; i < updateActiveTextBoxes.Count; i++) {
+                                if (updateActiveTextBoxes[i].Text != "") {
+                                    if (i != 0) queryStatement += ", ";
+                                queryStatement += horsesData.Columns[i].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveTextBoxes[i].Text) + "'";
+                                }
+                            }
+                            queryStatement += "\nWHERE ";
+                            for (int j = 0; j < updateActiveConditionTextBoxes.Count; j++)
+                            {
+                                if (updateActiveConditionTextBoxes[j].Text != "")
+                                {
+                                    queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                }
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                queryStatement += ";";
+                Console.WriteLine(queryStatement);
+                              
             }
         }
     }

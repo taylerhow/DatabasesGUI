@@ -756,6 +756,7 @@
             this.updateButton.TabIndex = 37;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // updateTableSelectionLabel
             // 
