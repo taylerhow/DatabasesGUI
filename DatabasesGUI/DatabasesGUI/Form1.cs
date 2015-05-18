@@ -462,6 +462,12 @@ namespace DatabasesGUI
             insertAttribute4Label.Text = horsesData.Columns[3].ColumnName;
             insertAttribute5Label.Text = horsesData.Columns[4].ColumnName;
 
+            insertActiveTextBoxes.Add(insertAttribute1TextBox);
+            insertActiveTextBoxes.Add(insertAttribute2TextBox);
+            insertActiveTextBoxes.Add(insertAttribute3TextBox);
+            insertActiveTextBoxes.Add(insertAttribute4TextBox);
+            insertActiveTextBoxes.Add(insertAttribute5TextBox);
+
             insertAttribute6Label.Visible = false;
             insertAttribute7Label.Visible = false;
             insertAttribute8Label.Visible = false;
@@ -515,7 +521,7 @@ namespace DatabasesGUI
 
         public static string RemoveSpecialCharacters(string str)
         {
-            Console.WriteLine("Sanitizaing input..");
+            Console.WriteLine("Sanitizing input..");
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
             {
@@ -534,7 +540,156 @@ namespace DatabasesGUI
 
             switch (tableToInsertInto)
             {
+                case "Horses":
+                    using(SqlConnection _con=new SqlConnection(DBconnectionString))
+                    {
+                        string insertHorse= "INSERT INTO Horses (Name,Weight,Height,Date_Of_Birth,NumWins) VALUES (@name,@weight,@height,@DOB,@numWins)";
+
+                        using(SqlCommand _cmd = new SqlCommand(insertHorse))
+                        {
+                            _cmd.Connection=_con;
+
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@weight", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@height", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+                            _cmd.Parameters.Add("@DOB", SqlDbType.Date).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
+                            _cmd.Parameters.Add("@numWins", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
+                            
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Jockeys":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertJockey = "INSERT INTO Jockeys (Jockey_ID,Name,Weight,Height,NumWins) VALUES (@ID,@name,@weight,@height,@numWins)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertJockey))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@weight", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+                            _cmd.Parameters.Add("@height", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
+                            _cmd.Parameters.Add("@numWins", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Races":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertRace = "INSERT INTO Races (Race_ID,Length,Date,Name,Win,Place,Show,Track_Name) VALUES (@ID,@length,@date,@name,@win,@place,@show,@trackName)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertRace))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@length", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@date", SqlDbType.Date).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
+                            _cmd.Parameters.Add("@win", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
+                            _cmd.Parameters.Add("@place", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[5].Text);
+                            _cmd.Parameters.Add("@show", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[6].Text);
+                            _cmd.Parameters.Add("@trackName", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[7].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Rides":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertRide = "INSERT INTO Rides (Jockey_ID,Horse_Name,Race_ID) VALUES (@jockeyID,@horseName,@raceID)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertRide))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@jockeyID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@horseName", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@raceID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Tracks":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertTrack = "INSERT INTO Tracks (Name,City,State) VALUES (@name,@city,@state)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertTrack))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@city", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@state", SqlDbType.VarChar, 2).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Gamblers":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertGambler = "INSERT INTO Gamblers (Gambler_ID,Name,Address,Phone,Email) VALUES (@ID,@name,@address,@phone,@email)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertGambler))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 25).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@address", SqlDbType.VarChar, 60).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+                            _cmd.Parameters.Add("@phone", SqlDbType.Char, 12).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
+                            _cmd.Parameters.Add("@email", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
+                case "Bets":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string insertBet = "INSERT INTO Bets (Bet_ID,Amount,Condition,Horse_Name,Race_ID,Gambler_ID,Payout) VALUES (@ID,@amount,@condition,@horseName,@raceID,@gamblerID,@payout)";
+
+                        using (SqlCommand _cmd = new SqlCommand(insertBet))
+                        {
+                            _cmd.Connection = _con;
+
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[0].Text);
+                            _cmd.Parameters.Add("@amount", SqlDbType.Money).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
+                            _cmd.Parameters.Add("@condition", SqlDbType.VarChar, 50).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
+                            _cmd.Parameters.Add("@horseName", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
+                            _cmd.Parameters.Add("@raceID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
+                            _cmd.Parameters.Add("@gamblerID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[5].Text);
+                            _cmd.Parameters.Add("@payout", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[6].Text);
+
+                            _con.Open();
+                            _cmd.ExecuteNonQuery();
+                            _con.Close();
+                        }
+                    }
+                    break;
                 default:
+                    Console.WriteLine("Running default case...");
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
                         string queryStatement = "INSERT INTO " + tableToInsertInto + "\nVALUES(";
