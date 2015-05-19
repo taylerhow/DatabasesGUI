@@ -1063,6 +1063,7 @@ namespace DatabasesGUI
                         handleSQLException(exception);
                     }
                 }
+                refreshDataTables();
             }
         }
 
