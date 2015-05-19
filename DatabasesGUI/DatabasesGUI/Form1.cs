@@ -236,16 +236,6 @@ namespace DatabasesGUI
         }
 
         //Insert Data tab
-        private void insertUsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            updateUsernameTextBox.Text = insertUsernameTextBox.Text;
-        }
-
-        private void insertPasswordTextBox_TextChanged(object sender, EventArgs e)
-        {
-            updatePasswordTextBox.Text = insertUsernameTextBox.Text;
-        }
-
         private void insertTableSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Label> attributeLabels = new List<Label>();
@@ -661,16 +651,6 @@ namespace DatabasesGUI
         }
 
         //Update Data tab
-        private void updateUsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            insertUsernameTextBox.Text = updatePasswordTextBox.Text;
-        }
-
-        private void updatePasswordTextBox_TextChanged(object sender, EventArgs e)
-        {
-            insertPasswordTextBox.Text = updatePasswordTextBox.Text;
-        }
-
         private void updateTableSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Label> attributeLabels = new List<Label>();
