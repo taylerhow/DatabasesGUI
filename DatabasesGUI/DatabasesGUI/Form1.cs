@@ -674,6 +674,7 @@ namespace DatabasesGUI
 
             String selectedTable = updateTableSelectionComboBox.SelectedValue.ToString();
             updateActiveTextBoxes.Clear();
+            updateActiveConditionTextBoxes.Clear();
 
             switch (selectedTable)
             {
@@ -693,6 +694,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = horsesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -719,6 +721,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = jockeysData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -745,6 +748,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = racesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -771,6 +775,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = tracksData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -797,6 +802,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = ridesData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -823,6 +829,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = gamblersData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -849,6 +856,7 @@ namespace DatabasesGUI
                             attributeConditionLabels[i].Text = betsData.Columns[i].ColumnName;
                             attributeConditionLabels[i].Visible = true;
                             attributeConditionTextBoxes[i].Visible = true;
+                            updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
                         }
                         else
                         {
@@ -898,11 +906,6 @@ namespace DatabasesGUI
             attributeConditionTextBoxes.Add(updateAttribute7ConditionTextBox);
             attributeConditionTextBoxes.Add(updateAttribute8ConditionTextBox);
 
-            for (int i = 0; i < attributeConditionTextBoxes.Count; i++)
-            {
-                if (attributeConditionTextBoxes[i].Text != "") updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
-            }
-
             string username = updateUsernameTextBox.Text;
             string password = updatePasswordTextBox.Text;
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
@@ -911,6 +914,7 @@ namespace DatabasesGUI
             //Sync insert/update username & password text boxes for convenience
             insertUsernameTextBox.Text = username;
             insertPasswordTextBox.Text = password;
+            Console.WriteLine("Active Boxes: " + updateActiveConditionTextBoxes.Count);
 
             using (SqlConnection _con = new SqlConnection(DBconnectionString))
             {
