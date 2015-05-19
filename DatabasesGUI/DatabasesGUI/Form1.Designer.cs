@@ -77,6 +77,11 @@
             this.insertAttribute2TextBox = new System.Windows.Forms.TextBox();
             this.insertAttribute1TextBox = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.updatePasswordTextBox = new System.Windows.Forms.TextBox();
+            this.updateUsernameTextBox = new System.Windows.Forms.TextBox();
             this.updateConditionsLabel = new System.Windows.Forms.Label();
             this.updateAttribute8Label = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -116,11 +121,6 @@
             this.updateAttribute1ConditionTextBox = new System.Windows.Forms.TextBox();
             this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
             this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.viewDataTabControl.SuspendLayout();
@@ -606,8 +606,8 @@
             this.tabPage11.Controls.Add(this.label5);
             this.tabPage11.Controls.Add(this.label4);
             this.tabPage11.Controls.Add(this.label3);
-            this.tabPage11.Controls.Add(this.textBox2);
-            this.tabPage11.Controls.Add(this.textBox1);
+            this.tabPage11.Controls.Add(this.updatePasswordTextBox);
+            this.tabPage11.Controls.Add(this.updateUsernameTextBox);
             this.tabPage11.Controls.Add(this.updateConditionsLabel);
             this.tabPage11.Controls.Add(this.updateAttribute8Label);
             this.tabPage11.Controls.Add(this.label18);
@@ -652,6 +652,47 @@
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Update Data";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 201);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 17);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Update Attributes:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Password:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Username:";
+            // 
+            // updatePasswordTextBox
+            // 
+            this.updatePasswordTextBox.Location = new System.Drawing.Point(19, 93);
+            this.updatePasswordTextBox.Name = "updatePasswordTextBox";
+            this.updatePasswordTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updatePasswordTextBox.TabIndex = 57;
+            // 
+            // updateUsernameTextBox
+            // 
+            this.updateUsernameTextBox.Location = new System.Drawing.Point(19, 33);
+            this.updateUsernameTextBox.Name = "updateUsernameTextBox";
+            this.updateUsernameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.updateUsernameTextBox.TabIndex = 56;
             // 
             // updateConditionsLabel
             // 
@@ -964,47 +1005,6 @@
             this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
             this.horseRacingDataSetBindingSource.Position = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(19, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 56;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(19, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 57;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 17);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Username:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Password:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 17);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Update Attributes:";
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1136,8 +1136,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox updatePasswordTextBox;
+        private System.Windows.Forms.TextBox updateUsernameTextBox;
     }
 }
 

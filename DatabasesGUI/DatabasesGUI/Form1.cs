@@ -1089,8 +1089,10 @@ namespace DatabasesGUI
                 if (attributeConditionTextBoxes[i].Text != "") updateActiveConditionTextBoxes.Add(attributeConditionTextBoxes[i]);
             }
 
+            string username = updateUsernameTextBox.Text;
+            string password = updatePasswordTextBox.Text;
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
             String tableToInsertInto = updateTableSelectionComboBox.SelectedValue.ToString();
-            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
 
             using (SqlConnection _con = new SqlConnection(DBconnectionString))
             {
