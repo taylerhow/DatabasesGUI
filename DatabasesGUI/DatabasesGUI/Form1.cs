@@ -418,6 +418,10 @@ namespace DatabasesGUI
             string password = insertPasswordTextBox.Text;
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + RemoveSpecialCharacters(username) + ";Password=" + RemoveSpecialCharacters(password);
 
+            //Sync insert/update username & password text boxes for convenience
+            updateUsernameTextBox.Text = username;
+            updatePasswordTextBox.Text = password;
+
             switch (tableToInsertInto)
             {
                 case "Horses":
@@ -928,6 +932,10 @@ namespace DatabasesGUI
             string password = updatePasswordTextBox.Text;
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
             String tableToInsertInto = updateTableSelectionComboBox.SelectedValue.ToString();
+
+            //Sync insert/update username & password text boxes for convenience
+            insertUsernameTextBox.Text = username;
+            insertPasswordTextBox.Text = password;
 
             using (SqlConnection _con = new SqlConnection(DBconnectionString))
             {
