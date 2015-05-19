@@ -408,7 +408,7 @@ namespace DatabasesGUI
             String tableToInsertInto = insertTableSelectionComboBox.SelectedValue.ToString();
             string username = insertUsernameTextBox.Text;
             string password = insertPasswordTextBox.Text;
-            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + RemoveSpecialCharacters(username) + ";Password=" + RemoveSpecialCharacters(password);
 
             switch (tableToInsertInto)
             {
@@ -1232,9 +1232,12 @@ namespace DatabasesGUI
             updateAttribute8ConditionTextBox.Visible = false;
         }
 
-        public static string RemoveSpecialCharacters(string str)
+        public static object RemoveSpecialCharacters(string str)
         {
-            Console.WriteLine("Sanitizing input..");
+            if (str == "")
+            {
+                return DBNull.Value;
+            }
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
             {
@@ -1250,6 +1253,15 @@ namespace DatabasesGUI
         {
             switch (exception.Number)
             {
+                case 18456:
+                    Console.WriteLine("Invalid username/password combination!");
+                    break;
+                case 2627:
+                    Console.WriteLine("Cannot insert duplicate element into table!");
+                    break;
+                case 547:
+                    Console.WriteLine("Invalid input! Violating Foreign Key constraints!");
+                    break;
                 default:
                     Console.WriteLine(exception.Number);
                     break;
