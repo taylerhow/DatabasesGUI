@@ -93,9 +93,11 @@ namespace DatabasesGUI
                 case "ParticipantsByRaceName":
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.ParticipantsByRaceName @RaceName = \"" + textFieldInput + "\"";
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceName @RaceName = @name";
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(textFieldInput);
+
                             DataTable participantsTable = new DataTable("Participants by Race Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
@@ -117,9 +119,11 @@ namespace DatabasesGUI
                 case "BetsByGamblerName":
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.BetsByGamblerName @GamblerName = \"" + textFieldInput + "\"";
+                        string queryStatement = "EXEC dbo.BetsByGamblerName @GamblerName = @name";
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
+                            _cmd.Parameters.Add("@name", SqlDbType.VarChar, 25).Value = RemoveSpecialCharacters(textFieldInput);
+
                             DataTable betsTable = new DataTable("Bets by Gambler Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
@@ -141,9 +145,11 @@ namespace DatabasesGUI
                 case "ParticipantsByRaceID":
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.ParticipantsByRaceID @RaceID = \"" + textFieldInput + "\"";
+                        string queryStatement = "EXEC dbo.ParticipantsByRaceID @RaceID = @ID";
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(textFieldInput);
+
                             DataTable participantsByIDTable = new DataTable("Participants by Race ID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
@@ -165,9 +171,11 @@ namespace DatabasesGUI
                 case "BetsByGamblerID":
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
-                        string queryStatement = "EXEC dbo.BetsByGamblerID @GamblerID = \"" + textFieldInput + "\"";
+                        string queryStatement = "EXEC dbo.BetsByGamblerID @GamblerID = @ID";
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
+                            _cmd.Parameters.Add("@ID", SqlDbType.Int).Value = RemoveSpecialCharacters(textFieldInput);
+
                             DataTable betsFromGamlberIDTable = new DataTable("Bets by GamblerID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
