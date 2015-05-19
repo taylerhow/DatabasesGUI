@@ -420,7 +420,6 @@
             this.insertPasswordTextBox.PasswordChar = '*';
             this.insertPasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.insertPasswordTextBox.TabIndex = 22;
-            this.insertPasswordTextBox.TextChanged += new System.EventHandler(this.insertPasswordTextBox_TextChanged);
             // 
             // insertUsernameTextBox
             // 
@@ -428,7 +427,6 @@
             this.insertUsernameTextBox.Name = "insertUsernameTextBox";
             this.insertUsernameTextBox.Size = new System.Drawing.Size(100, 22);
             this.insertUsernameTextBox.TabIndex = 21;
-            this.insertUsernameTextBox.TextChanged += new System.EventHandler(this.insertUsernameTextBox_TextChanged);
             // 
             // label2
             // 
@@ -690,7 +688,6 @@
             this.updatePasswordTextBox.PasswordChar = '*';
             this.updatePasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.updatePasswordTextBox.TabIndex = 57;
-            this.updatePasswordTextBox.TextChanged += new System.EventHandler(this.updatePasswordTextBox_TextChanged);
             // 
             // updateUsernameTextBox
             // 
@@ -698,7 +695,6 @@
             this.updateUsernameTextBox.Name = "updateUsernameTextBox";
             this.updateUsernameTextBox.Size = new System.Drawing.Size(100, 22);
             this.updateUsernameTextBox.TabIndex = 56;
-            this.updateUsernameTextBox.TextChanged += new System.EventHandler(this.updateUsernameTextBox_TextChanged);
             // 
             // updateConditionsLabel
             // 
