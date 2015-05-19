@@ -29,6 +29,7 @@ namespace DatabasesGUI
             setupUpdateDataTab();
         }
 
+        //View Data tab
         private void refreshDataButton_Click(object sender, EventArgs e)
         {
             HorseRacingDataSetTableAdapters.HorsesTableAdapter horsesAdapter = new HorseRacingDataSetTableAdapters.HorsesTableAdapter();
@@ -98,9 +99,16 @@ namespace DatabasesGUI
                             DataTable participantsTable = new DataTable("Participants by Race Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
-                            _con.Open();
-                            _dap.Fill(participantsTable);
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _dap.Fill(participantsTable);
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
 
                             storedProcedureResultsTableView.DataSource = participantsTable;
                         }
@@ -115,9 +123,16 @@ namespace DatabasesGUI
                             DataTable betsTable = new DataTable("Bets by Gambler Name");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
-                            _con.Open();
-                            _dap.Fill(betsTable);
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _dap.Fill(betsTable);
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
 
                             storedProcedureResultsTableView.DataSource = betsTable;
                         }
@@ -132,9 +147,16 @@ namespace DatabasesGUI
                             DataTable participantsByIDTable = new DataTable("Participants by Race ID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
-                            _con.Open();
-                            _dap.Fill(participantsByIDTable);
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _dap.Fill(participantsByIDTable);
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
 
                             storedProcedureResultsTableView.DataSource = participantsByIDTable;
                         }
@@ -149,9 +171,16 @@ namespace DatabasesGUI
                             DataTable betsFromGamlberIDTable = new DataTable("Bets by GamblerID");
                             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
 
-                            _con.Open();
-                            _dap.Fill(betsFromGamlberIDTable);
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _dap.Fill(betsFromGamlberIDTable);
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
 
                             storedProcedureResultsTableView.DataSource = betsFromGamlberIDTable;
                         }
@@ -198,6 +227,7 @@ namespace DatabasesGUI
             }
         }
 
+        //Insert Data tab
         private void insertTableSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Label> attributeLabels = new List<Label>();
@@ -372,6 +402,8 @@ namespace DatabasesGUI
 
 
         }
+
+        //Update Data tab
 
         //Helper methods
 
@@ -556,10 +588,17 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@height", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
                             _cmd.Parameters.Add("@DOB", SqlDbType.Date).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
                             _cmd.Parameters.Add("@numWins", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
-                            
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -578,9 +617,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@height", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
                             _cmd.Parameters.Add("@numWins", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -602,9 +648,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@show", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[6].Text);
                             _cmd.Parameters.Add("@trackName", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[7].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -621,9 +674,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@horseName", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
                             _cmd.Parameters.Add("@raceID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -640,9 +700,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@city", SqlDbType.VarChar, 20).Value = RemoveSpecialCharacters(insertActiveTextBoxes[1].Text);
                             _cmd.Parameters.Add("@state", SqlDbType.VarChar, 2).Value = RemoveSpecialCharacters(insertActiveTextBoxes[2].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -661,9 +728,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@phone", SqlDbType.Char, 12).Value = RemoveSpecialCharacters(insertActiveTextBoxes[3].Text);
                             _cmd.Parameters.Add("@email", SqlDbType.VarChar, 35).Value = RemoveSpecialCharacters(insertActiveTextBoxes[4].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -684,9 +758,16 @@ namespace DatabasesGUI
                             _cmd.Parameters.Add("@gamblerID", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[5].Text);
                             _cmd.Parameters.Add("@payout", SqlDbType.Int).Value = RemoveSpecialCharacters(insertActiveTextBoxes[6].Text);
 
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -707,9 +788,16 @@ namespace DatabasesGUI
                         Console.WriteLine(queryStatement);
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
-                            _con.Open();
-                            _cmd.ExecuteNonQuery();
-                            _con.Close();
+                            try
+                            {
+                                _con.Open();
+                                _cmd.ExecuteNonQuery();
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
                         }
                     }
                     break;
@@ -1139,12 +1227,12 @@ namespace DatabasesGUI
             }
         }
 
-        private void handleSQLException(SqlException e)
+        private void handleSQLException(SqlException exception)
         {
-            switch (e.Number)
+            switch (exception.Number)
             {
                 default:
-                    Console.WriteLine(e.Number);
+                    Console.WriteLine(exception.Number);
                     break;
             }
         }
