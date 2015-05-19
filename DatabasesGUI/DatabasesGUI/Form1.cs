@@ -1077,6 +1077,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
+                                Console.WriteLine(updateActiveConditionTextBoxes.Count);
                                 queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
                             }
                         }
@@ -1230,6 +1231,12 @@ namespace DatabasesGUI
             updateAttribute3Label.Text = horsesData.Columns[2].ColumnName;
             updateAttribute4Label.Text = horsesData.Columns[3].ColumnName;
             updateAttribute5Label.Text = horsesData.Columns[4].ColumnName;
+
+            updateAttribute1ConditionLabel.Text = horsesData.Columns[0].ColumnName;
+            updateAttribute2ConditionLabel.Text = horsesData.Columns[1].ColumnName;
+            updateAttribute3ConditionLabel.Text = horsesData.Columns[2].ColumnName;
+            updateAttribute4ConditionLabel.Text = horsesData.Columns[3].ColumnName;
+            updateAttribute5ConditionLabel.Text = horsesData.Columns[4].ColumnName;
 
             this.updateActiveTextBoxes.Add(updateAttribute1TextBox);
             this.updateActiveTextBoxes.Add(updateAttribute2TextBox);
