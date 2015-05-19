@@ -935,7 +935,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + betsData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + betsData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -953,7 +953,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + gamblersData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + gamblersData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -971,7 +971,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + ridesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + ridesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -989,7 +989,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + tracksData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + tracksData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -1007,7 +1007,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + racesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + racesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -1025,7 +1025,7 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                queryStatement += " " + jockeysData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + jockeysData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
@@ -1044,14 +1044,14 @@ namespace DatabasesGUI
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
                                 Console.WriteLine(updateActiveConditionTextBoxes.Count);
-                                queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "',";
+                                queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
                         break;
                     default:
                         break;
                 }
-                if (queryStatement.EndsWith(",")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 1);
+                if (queryStatement.EndsWith("AND")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 4);
                 queryStatement += ";";
                 Console.WriteLine(queryStatement);
                 using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
