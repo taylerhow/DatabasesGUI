@@ -417,6 +417,7 @@
             // 
             this.insertPasswordTextBox.Location = new System.Drawing.Point(20, 84);
             this.insertPasswordTextBox.Name = "insertPasswordTextBox";
+            this.insertPasswordTextBox.PasswordChar = '*';
             this.insertPasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.insertPasswordTextBox.TabIndex = 22;
             // 
@@ -684,6 +685,7 @@
             // 
             this.updatePasswordTextBox.Location = new System.Drawing.Point(19, 93);
             this.updatePasswordTextBox.Name = "updatePasswordTextBox";
+            this.updatePasswordTextBox.PasswordChar = '*';
             this.updatePasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.updatePasswordTextBox.TabIndex = 57;
             // 
