@@ -420,6 +420,7 @@
             this.insertPasswordTextBox.PasswordChar = '*';
             this.insertPasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.insertPasswordTextBox.TabIndex = 22;
+            this.insertPasswordTextBox.TextChanged += new System.EventHandler(this.insertPasswordTextBox_TextChanged);
             // 
             // insertUsernameTextBox
             // 
@@ -427,24 +428,25 @@
             this.insertUsernameTextBox.Name = "insertUsernameTextBox";
             this.insertUsernameTextBox.Size = new System.Drawing.Size(100, 22);
             this.insertUsernameTextBox.TabIndex = 21;
+            this.insertUsernameTextBox.TextChanged += new System.EventHandler(this.insertUsernameTextBox_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 20;
-            this.label2.Text = "Password";
+            this.label2.Text = "Password:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Username";
+            this.label1.Text = "Username:";
             // 
             // insertButton
             // 
@@ -688,6 +690,7 @@
             this.updatePasswordTextBox.PasswordChar = '*';
             this.updatePasswordTextBox.Size = new System.Drawing.Size(100, 22);
             this.updatePasswordTextBox.TabIndex = 57;
+            this.updatePasswordTextBox.TextChanged += new System.EventHandler(this.updatePasswordTextBox_TextChanged);
             // 
             // updateUsernameTextBox
             // 
@@ -695,6 +698,7 @@
             this.updateUsernameTextBox.Name = "updateUsernameTextBox";
             this.updateUsernameTextBox.Size = new System.Drawing.Size(100, 22);
             this.updateUsernameTextBox.TabIndex = 56;
+            this.updateUsernameTextBox.TextChanged += new System.EventHandler(this.updateUsernameTextBox_TextChanged);
             // 
             // updateConditionsLabel
             // 
