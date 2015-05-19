@@ -536,7 +536,9 @@ namespace DatabasesGUI
         private void insertButton_Click(object sender, EventArgs e)
         {
             String tableToInsertInto = insertTableSelectionComboBox.SelectedValue.ToString();
-            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
+            string username = insertUsernameTextBox.Text;
+            string password = insertPasswordTextBox.Text;
+            string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
 
             switch (tableToInsertInto)
             {
@@ -1134,6 +1136,16 @@ namespace DatabasesGUI
                     _cmd.ExecuteNonQuery();
                     _con.Close();
                 }
+            }
+        }
+
+        private void handleSQLException(SqlException e)
+        {
+            switch (e.Number)
+            {
+                default:
+                    Console.WriteLine(e.Number);
+                    break;
             }
         }
     }
