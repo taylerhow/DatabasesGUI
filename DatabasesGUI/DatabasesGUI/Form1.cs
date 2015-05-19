@@ -1220,9 +1220,16 @@ namespace DatabasesGUI
                 Console.WriteLine(queryStatement);
                 using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                 {
-                    _con.Open();
-                    _cmd.ExecuteNonQuery();
-                    _con.Close();
+                    try
+                    {
+                        _con.Open();
+                        _cmd.ExecuteNonQuery();
+                        _con.Close();
+                    }
+                    catch (SqlException exception)
+                    {
+                        handleSQLException(exception);
+                    }
                 }
             }
         }
