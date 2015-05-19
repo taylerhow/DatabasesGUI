@@ -534,6 +534,18 @@ namespace DatabasesGUI
             updateAttribute4Label.Text = horsesData.Columns[3].ColumnName;
             updateAttribute5Label.Text = horsesData.Columns[4].ColumnName;
 
+            this.updateActiveTextBoxes.Add(updateAttribute1TextBox);
+            this.updateActiveTextBoxes.Add(updateAttribute2TextBox);
+            this.updateActiveTextBoxes.Add(updateAttribute3TextBox);
+            this.updateActiveTextBoxes.Add(updateAttribute4TextBox);
+            this.updateActiveTextBoxes.Add(updateAttribute5TextBox);
+
+            this.updateActiveConditionTextBoxes.Add(updateAttribute1ConditionTextBox);
+            this.updateActiveConditionTextBoxes.Add(updateAttribute2ConditionTextBox);
+            this.updateActiveConditionTextBoxes.Add(updateAttribute3ConditionTextBox);
+            this.updateActiveConditionTextBoxes.Add(updateAttribute4ConditionTextBox);
+            this.updateActiveConditionTextBoxes.Add(updateAttribute5ConditionTextBox);
+
             updateAttribute6Label.Visible = false;
             updateAttribute7Label.Visible = false;
             updateAttribute8Label.Visible = false;
