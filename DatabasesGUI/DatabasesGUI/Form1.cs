@@ -44,6 +44,16 @@ namespace DatabasesGUI
 
             switch (comboBoxSelection)
             {
+                case "JockeysWithoutBets":
+                    HorseRacingDataSetTableAdapters.JockeysWithoutBetsTableAdapter jockeysWithoutBetsAdaptor = new HorseRacingDataSetTableAdapters.JockeysWithoutBetsTableAdapter();
+                    HorseRacingDataSet.JockeysWithoutBetsDataTable jockeysWithoutBetsData = jockeysWithoutBetsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = jockeysWithoutBetsData;
+                    break;
+                case "JockeysWithBets":
+                    HorseRacingDataSetTableAdapters.JockeysWithBetsTableAdapter jockeysWithBetsAdaptor = new HorseRacingDataSetTableAdapters.JockeysWithBetsTableAdapter();
+                    HorseRacingDataSet.JockeysWithBetsDataTable jockeysWithBetsData = jockeysWithBetsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = jockeysWithBetsData;
+                    break;
                 case "HorsesWithoutBets":
                     HorseRacingDataSetTableAdapters.HorsesWithoutBetsTableAdapter horsesWithoutBetsAdaptor = new HorseRacingDataSetTableAdapters.HorsesWithoutBetsTableAdapter();
                     HorseRacingDataSet.HorsesWithoutBetsDataTable horsesWithoutBetsData = horsesWithoutBetsAdaptor.GetData();
@@ -211,6 +221,14 @@ namespace DatabasesGUI
             String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
             {
+                case "JockeysWithoutBets":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
+                case "JockeysWithBets":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "HorsesWithoutBets":
                     storedProcedureParameterTextBox.Text = "No Parameters Required";
                     storedProcedureParameterTextBox.Enabled = false;
@@ -1200,6 +1218,9 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Top 10 Payouts", value = "Top10Payouts" });
             dataSource.Add(new Language() { name = "Horses with Bets Placed on Them", value = "HorsesWithBets" });
             dataSource.Add(new Language() { name = "Horses without Bets Place on Them", value = "HorsesWithoutBets" });
+            dataSource.Add(new Language() { name = "Jockeys with Bets Placed on Them", value = "JockeysWithBets" });
+            dataSource.Add(new Language() { name = "Jockeys without Bets Placed on Them", value = "JockeysWithoutBets" });
+            
 
 
             storedProcedureComboBox.DataSource = dataSource;
