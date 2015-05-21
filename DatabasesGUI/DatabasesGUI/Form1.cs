@@ -44,6 +44,16 @@ namespace DatabasesGUI
 
             switch (comboBoxSelection)
             {
+                case "Top10Payouts":
+                    HorseRacingDataSetTableAdapters.Top10PayoutsTableAdapter top10PayoutsAdaptor = new HorseRacingDataSetTableAdapters.Top10PayoutsTableAdapter();
+                    HorseRacingDataSet.Top10PayoutsDataTable Top10PayoutsData = top10PayoutsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = Top10PayoutsData;
+                    break;
+                case "Top10BetAmounts":
+                    HorseRacingDataSetTableAdapters.Top10BetAmountsTableAdapter top10BetsAdaptor = new HorseRacingDataSetTableAdapters.Top10BetAmountsTableAdapter();
+                    HorseRacingDataSet.Top10BetAmountsDataTable Top10BetsData = top10BetsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = Top10BetsData;
+                    break;
                 case "Top10Jockeys":
                     HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter top10JockeysAdapter = new HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter();
                     HorseRacingDataSet.Top10JockeysDataTable Top10JockeysData = top10JockeysAdapter.GetData();
@@ -192,8 +202,17 @@ namespace DatabasesGUI
             switch (value)
             {
                 case "AllHorses":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "AllJockeys":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "WinningHorses":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "WinningJockeys":
                     storedProcedureParameterTextBox.Text = "No parameters required";
                     storedProcedureParameterTextBox.Enabled = false;
@@ -219,6 +238,14 @@ namespace DatabasesGUI
                     storedProcedureParameterTextBox.Enabled = false;
                     break;
                 case "Top10Horses":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
+                case "Top10BetAmouts":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
+                case "Top10Payouts":
                     storedProcedureParameterTextBox.Text = "No Parameters Required";
                     storedProcedureParameterTextBox.Enabled = false;
                     break;
@@ -1143,6 +1170,9 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsByGamblerID" });
             dataSource.Add(new Language() { name = "Top 10 Jockeys", value = "Top10Jockeys" });
             dataSource.Add(new Language() { name = "Top 10 Horses", value = "Top10Horses" });
+            dataSource.Add(new Language() { name = "Top 10 Bet Amounts, value = Top10BetAmouts " });
+            dataSource.Add(new Language() { name = "Top 10 Payouts", value = "Top10Payouts" });
+
 
             storedProcedureComboBox.DataSource = dataSource;
             storedProcedureComboBox.DisplayMember = "name";
