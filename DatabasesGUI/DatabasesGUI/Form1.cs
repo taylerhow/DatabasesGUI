@@ -1271,7 +1271,7 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Completed Races", value = "CompletedRaces" });
             dataSource.Add(new Language() { name = "Uncompleted Races", value = "UncompletedRaces" });
             dataSource.Add(new Language() { name = "Tracks in a Given State", value = "TracksInState" });
-            
+
 
 
             storedProcedureComboBox.DataSource = dataSource;
@@ -1393,7 +1393,7 @@ namespace DatabasesGUI
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
             {
-                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_' || c == ' ' || c == '/' || c == '-' || c == '@')
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_' || c == ' ' || c == '/' || c == '@')
                 {
                     sb.Append(c);
                 }
@@ -1456,11 +1456,12 @@ namespace DatabasesGUI
             HorseRacingDataSet.BetsDataTable betsData = betsAdapter.GetData();
             betsTableView.DataSource = betsData;
         }
-    }
 
-}
-public class Language
-{
-    public string name { get; set; }
-    public string value { get; set; }
+
+    }
+    public class Language
+    {
+        public string name { get; set; }
+        public string value { get; set; }
+    }
 }
