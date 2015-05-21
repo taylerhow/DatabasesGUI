@@ -44,6 +44,16 @@ namespace DatabasesGUI
 
             switch (comboBoxSelection)
             {
+                case "UncompletedRaces":
+                    HorseRacingDataSetTableAdapters.UncompletedRacesTableAdapter uncompletedRacesTableAdapter = new HorseRacingDataSetTableAdapters.UncompletedRacesTableAdapter();
+                    HorseRacingDataSet.UncompletedRacesDataTable uncompletedRacesData = uncompletedRacesTableAdapter.GetData();
+                    storedProcedureResultsTableView.DataSource = uncompletedRacesData;
+                    break;
+                case "CompletedRaces":
+                    HorseRacingDataSetTableAdapters.CompletedRacesTableAdapter completedRacesTableAdapter = new HorseRacingDataSetTableAdapters.CompletedRacesTableAdapter();
+                    HorseRacingDataSet.CompletedRacesDataTable completedRacesData = completedRacesTableAdapter.GetData();
+                    storedProcedureResultsTableView.DataSource = completedRacesData;
+                    break;
                 case "JockeysWithoutBets":
                     HorseRacingDataSetTableAdapters.JockeysWithoutBetsTableAdapter jockeysWithoutBetsAdaptor = new HorseRacingDataSetTableAdapters.JockeysWithoutBetsTableAdapter();
                     HorseRacingDataSet.JockeysWithoutBetsDataTable jockeysWithoutBetsData = jockeysWithoutBetsAdaptor.GetData();
@@ -127,6 +137,32 @@ namespace DatabasesGUI
                             }
 
                             storedProcedureResultsTableView.DataSource = participantsTable;
+                        }
+                    }
+                    break;
+                case "TracksInState":
+                    using (SqlConnection _con = new SqlConnection(DBconnectionString))
+                    {
+                        string queryStatement = "EXEC dbo.TracksInState @State = @state";
+                        using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
+                        {
+                            _cmd.Parameters.Add("@state", SqlDbType.VarChar, 2).Value = RemoveSpecialCharacters(textFieldInput);
+
+                            DataTable tracksInStateTable = new DataTable("Tracks In State");
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+
+                            try
+                            {
+                                _con.Open();
+                                _dap.Fill(tracksInStateTable);
+                                _con.Close();
+                            }
+                            catch (SqlException exception)
+                            {
+                                handleSQLException(exception);
+                            }
+
+                            storedProcedureResultsTableView.DataSource = tracksInStateTable;
                         }
                     }
                     break;
@@ -221,6 +257,18 @@ namespace DatabasesGUI
             String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
             {
+                case "TracksInState":
+                    storedProcedureParameterTextBox.Text = "Enter a state";
+                    storedProcedureParameterTextBox.Enabled = true;
+                    break;
+                case "UncompletedRaces":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
+                case "CompletedRaces":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "JockeysWithoutBets":
                     storedProcedureParameterTextBox.Text = "No Parameters Required";
                     storedProcedureParameterTextBox.Enabled = false;
@@ -1220,6 +1268,9 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Horses without Bets Place on Them", value = "HorsesWithoutBets" });
             dataSource.Add(new Language() { name = "Jockeys with Bets Placed on Them", value = "JockeysWithBets" });
             dataSource.Add(new Language() { name = "Jockeys without Bets Placed on Them", value = "JockeysWithoutBets" });
+            dataSource.Add(new Language() { name = "Completed Races", value = "CompletedRaces" });
+            dataSource.Add(new Language() { name = "Uncompleted Races", value = "UncompletedRaces" });
+            dataSource.Add(new Language() { name = "Tracks in a Given State", value = "TracksInState" });
             
 
 
