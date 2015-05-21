@@ -45,14 +45,14 @@ namespace DatabasesGUI
             switch (comboBoxSelection)
             {
                 case "Top10Jockeys":
-                    HorseRacingDataSetTableAdapters.Top10JockeysAdapter top10JockeysAdapter = new HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter();
-                    HorseRacingDataSet.WinningHorsesDataTable Top10JockeysData = top10JockeysAdapter.GetData();
+                    HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter top10JockeysAdapter = new HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter();
+                    HorseRacingDataSet.Top10JockeysDataTable Top10JockeysData = top10JockeysAdapter.GetData();
                     storedProcedureResultsTableView.DataSource = Top10JockeysData;
                     break;
                 case "Top10Horses":
-                    HorseRacingDataSetTableAdapters.Top10HorsesAdapter top10HorsesAdapter = new HorseRacingDataSetTableAdapters.Top10HorsesTableAdapter();
-                    HorseRacingDataSet.WinningHorsesDataTable Top10HorsesData = top10HorsesAdapter.GetData();
-                    storedProcedureResultsTableView.DataSource = Top10JHorsesData;
+                    HorseRacingDataSetTableAdapters.Top10HorsesTableAdapter top10HorsesAdapter = new HorseRacingDataSetTableAdapters.Top10HorsesTableAdapter();
+                    HorseRacingDataSet.Top10HorsesDataTable Top10HorsesData = top10HorsesAdapter.GetData();
+                    storedProcedureResultsTableView.DataSource = Top10HorsesData;
                     break;
                 case "WinningHorses":
                     HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();

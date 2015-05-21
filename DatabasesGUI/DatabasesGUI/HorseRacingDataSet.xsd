@@ -7,61 +7,6 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HorseRacingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HorseRacingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabasesGUI.Properties.Settings.GlobalReference.Default.HorseRacingConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GamblerBetsViewTableAdapter" GeneratorDataComponentClassName="GamblerBetsViewTableAdapter" Name="GamblerBetsView" UserDataComponentName="GamblerBetsViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HorseRacingConnectionString (Settings)" DbObjectName="HorseRacing.dbo.GamblerBetsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Name, Amount, Horse_Name, Condition FROM dbo.GamblerBetsView</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
-              <Mapping SourceColumn="Horse_Name" DataSetColumn="Horse_Name" />
-              <Mapping SourceColumn="Condition" DataSetColumn="Condition" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RaceBetsViewTableAdapter" GeneratorDataComponentClassName="RaceBetsViewTableAdapter" Name="RaceBetsView" UserDataComponentName="RaceBetsViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HorseRacingConnectionString (Settings)" DbObjectName="HorseRacing.dbo.RaceBetsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Name, Amount, Horse_Name, Condition FROM dbo.RaceBetsView</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
-              <Mapping SourceColumn="Horse_Name" DataSetColumn="Horse_Name" />
-              <Mapping SourceColumn="Condition" DataSetColumn="Condition" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RaceTrackViewTableAdapter" GeneratorDataComponentClassName="RaceTrackViewTableAdapter" Name="RaceTrackView" UserDataComponentName="RaceTrackViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HorseRacingConnectionString (Settings)" DbObjectName="HorseRacing.dbo.RaceTrackView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TrackName, RaceName FROM dbo.RaceTrackView</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="TrackName" DataSetColumn="TrackName" />
-              <Mapping SourceColumn="RaceName" DataSetColumn="RaceName" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RidesInRacesViewTableAdapter" GeneratorDataComponentClassName="RidesInRacesViewTableAdapter" Name="RidesInRacesView" UserDataComponentName="RidesInRacesViewTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="HorseRacingConnectionString (Settings)" DbObjectName="HorseRacing.dbo.RidesInRacesView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -798,83 +743,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
   <xs:element name="HorseRacingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HorseRacingDataSet" msprop:Generator_UserDSName="HorseRacingDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="GamblerBetsView" msprop:Generator_TableClassName="GamblerBetsViewDataTable" msprop:Generator_TableVarName="tableGamblerBetsView" msprop:Generator_RowChangedName="GamblerBetsViewRowChanged" msprop:Generator_TablePropName="GamblerBetsView" msprop:Generator_RowDeletingName="GamblerBetsViewRowDeleting" msprop:Generator_RowChangingName="GamblerBetsViewRowChanging" msprop:Generator_RowEvHandlerName="GamblerBetsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="GamblerBetsViewRowDeleted" msprop:Generator_RowClassName="GamblerBetsViewRow" msprop:Generator_UserTableName="GamblerBetsView" msprop:Generator_RowEvArgName="GamblerBetsViewRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
-              <xs:element name="Horse_Name" msprop:Generator_ColumnVarNameInTable="columnHorse_Name" msprop:Generator_ColumnPropNameInRow="Horse_Name" msprop:Generator_ColumnPropNameInTable="Horse_NameColumn" msprop:Generator_UserColumnName="Horse_Name" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="35" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Condition" msprop:Generator_ColumnVarNameInTable="columnCondition" msprop:Generator_ColumnPropNameInRow="Condition" msprop:Generator_ColumnPropNameInTable="ConditionColumn" msprop:Generator_UserColumnName="Condition">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RaceBetsView" msprop:Generator_TableClassName="RaceBetsViewDataTable" msprop:Generator_TableVarName="tableRaceBetsView" msprop:Generator_RowChangedName="RaceBetsViewRowChanged" msprop:Generator_TablePropName="RaceBetsView" msprop:Generator_RowDeletingName="RaceBetsViewRowDeleting" msprop:Generator_RowChangingName="RaceBetsViewRowChanging" msprop:Generator_RowEvHandlerName="RaceBetsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RaceBetsViewRowDeleted" msprop:Generator_RowClassName="RaceBetsViewRow" msprop:Generator_UserTableName="RaceBetsView" msprop:Generator_RowEvArgName="RaceBetsViewRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
-              <xs:element name="Horse_Name" msprop:Generator_ColumnVarNameInTable="columnHorse_Name" msprop:Generator_ColumnPropNameInRow="Horse_Name" msprop:Generator_ColumnPropNameInTable="Horse_NameColumn" msprop:Generator_UserColumnName="Horse_Name" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="35" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Condition" msprop:Generator_ColumnVarNameInTable="columnCondition" msprop:Generator_ColumnPropNameInRow="Condition" msprop:Generator_ColumnPropNameInTable="ConditionColumn" msprop:Generator_UserColumnName="Condition">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RaceTrackView" msprop:Generator_TableClassName="RaceTrackViewDataTable" msprop:Generator_TableVarName="tableRaceTrackView" msprop:Generator_RowChangedName="RaceTrackViewRowChanged" msprop:Generator_TablePropName="RaceTrackView" msprop:Generator_RowDeletingName="RaceTrackViewRowDeleting" msprop:Generator_RowChangingName="RaceTrackViewRowChanging" msprop:Generator_RowEvHandlerName="RaceTrackViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RaceTrackViewRowDeleted" msprop:Generator_RowClassName="RaceTrackViewRow" msprop:Generator_UserTableName="RaceTrackView" msprop:Generator_RowEvArgName="RaceTrackViewRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TrackName" msprop:Generator_ColumnVarNameInTable="columnTrackName" msprop:Generator_ColumnPropNameInRow="TrackName" msprop:Generator_ColumnPropNameInTable="TrackNameColumn" msprop:Generator_UserColumnName="TrackName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="RaceName" msprop:Generator_ColumnVarNameInTable="columnRaceName" msprop:Generator_ColumnPropNameInRow="RaceName" msprop:Generator_ColumnPropNameInTable="RaceNameColumn" msprop:Generator_UserColumnName="RaceName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RidesInRacesView" msprop:Generator_TableClassName="RidesInRacesViewDataTable" msprop:Generator_TableVarName="tableRidesInRacesView" msprop:Generator_RowChangedName="RidesInRacesViewRowChanged" msprop:Generator_TablePropName="RidesInRacesView" msprop:Generator_RowDeletingName="RidesInRacesViewRowDeleting" msprop:Generator_RowChangingName="RidesInRacesViewRowChanging" msprop:Generator_RowEvHandlerName="RidesInRacesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RidesInRacesViewRowDeleted" msprop:Generator_RowClassName="RidesInRacesViewRow" msprop:Generator_UserTableName="RidesInRacesView" msprop:Generator_RowEvArgName="RidesInRacesViewRowChangeEvent">
+        <xs:element name="RidesInRacesView" msprop:Generator_TableClassName="RidesInRacesViewDataTable" msprop:Generator_TableVarName="tableRidesInRacesView" msprop:Generator_TablePropName="RidesInRacesView" msprop:Generator_RowDeletingName="RidesInRacesViewRowDeleting" msprop:Generator_RowChangingName="RidesInRacesViewRowChanging" msprop:Generator_RowEvHandlerName="RidesInRacesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RidesInRacesViewRowDeleted" msprop:Generator_UserTableName="RidesInRacesView" msprop:Generator_RowChangedName="RidesInRacesViewRowChanged" msprop:Generator_RowEvArgName="RidesInRacesViewRowChangeEvent" msprop:Generator_RowClassName="RidesInRacesViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Horse_Name" msprop:Generator_ColumnVarNameInTable="columnHorse_Name" msprop:Generator_ColumnPropNameInRow="Horse_Name" msprop:Generator_ColumnPropNameInTable="Horse_NameColumn" msprop:Generator_UserColumnName="Horse_Name" minOccurs="0">
@@ -931,7 +800,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AllHorses" msprop:Generator_TableClassName="AllHorsesDataTable" msprop:Generator_TableVarName="tableAllHorses" msprop:Generator_RowChangedName="AllHorsesRowChanged" msprop:Generator_TablePropName="AllHorses" msprop:Generator_RowDeletingName="AllHorsesRowDeleting" msprop:Generator_RowChangingName="AllHorsesRowChanging" msprop:Generator_RowEvHandlerName="AllHorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="AllHorsesRowDeleted" msprop:Generator_RowClassName="AllHorsesRow" msprop:Generator_UserTableName="AllHorses" msprop:Generator_RowEvArgName="AllHorsesRowChangeEvent">
+        <xs:element name="AllHorses" msprop:Generator_TableClassName="AllHorsesDataTable" msprop:Generator_TableVarName="tableAllHorses" msprop:Generator_TablePropName="AllHorses" msprop:Generator_RowDeletingName="AllHorsesRowDeleting" msprop:Generator_RowChangingName="AllHorsesRowChanging" msprop:Generator_RowEvHandlerName="AllHorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="AllHorsesRowDeleted" msprop:Generator_UserTableName="AllHorses" msprop:Generator_RowChangedName="AllHorsesRowChanged" msprop:Generator_RowEvArgName="AllHorsesRowChangeEvent" msprop:Generator_RowClassName="AllHorsesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -953,7 +822,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AllJockeys" msprop:Generator_TableClassName="AllJockeysDataTable" msprop:Generator_TableVarName="tableAllJockeys" msprop:Generator_RowChangedName="AllJockeysRowChanged" msprop:Generator_TablePropName="AllJockeys" msprop:Generator_RowDeletingName="AllJockeysRowDeleting" msprop:Generator_RowChangingName="AllJockeysRowChanging" msprop:Generator_RowEvHandlerName="AllJockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="AllJockeysRowDeleted" msprop:Generator_RowClassName="AllJockeysRow" msprop:Generator_UserTableName="AllJockeys" msprop:Generator_RowEvArgName="AllJockeysRowChangeEvent">
+        <xs:element name="AllJockeys" msprop:Generator_TableClassName="AllJockeysDataTable" msprop:Generator_TableVarName="tableAllJockeys" msprop:Generator_TablePropName="AllJockeys" msprop:Generator_RowDeletingName="AllJockeysRowDeleting" msprop:Generator_RowChangingName="AllJockeysRowChanging" msprop:Generator_RowEvHandlerName="AllJockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="AllJockeysRowDeleted" msprop:Generator_UserTableName="AllJockeys" msprop:Generator_RowChangedName="AllJockeysRowChanged" msprop:Generator_RowEvArgName="AllJockeysRowChangeEvent" msprop:Generator_RowClassName="AllJockeysRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -975,7 +844,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WinningHorses" msprop:Generator_TableClassName="WinningHorsesDataTable" msprop:Generator_TableVarName="tableWinningHorses" msprop:Generator_RowChangedName="WinningHorsesRowChanged" msprop:Generator_TablePropName="WinningHorses" msprop:Generator_RowDeletingName="WinningHorsesRowDeleting" msprop:Generator_RowChangingName="WinningHorsesRowChanging" msprop:Generator_RowEvHandlerName="WinningHorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="WinningHorsesRowDeleted" msprop:Generator_RowClassName="WinningHorsesRow" msprop:Generator_UserTableName="WinningHorses" msprop:Generator_RowEvArgName="WinningHorsesRowChangeEvent">
+        <xs:element name="WinningHorses" msprop:Generator_TableClassName="WinningHorsesDataTable" msprop:Generator_TableVarName="tableWinningHorses" msprop:Generator_TablePropName="WinningHorses" msprop:Generator_RowDeletingName="WinningHorsesRowDeleting" msprop:Generator_RowChangingName="WinningHorsesRowChanging" msprop:Generator_RowEvHandlerName="WinningHorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="WinningHorsesRowDeleted" msprop:Generator_UserTableName="WinningHorses" msprop:Generator_RowChangedName="WinningHorsesRowChanged" msprop:Generator_RowEvArgName="WinningHorsesRowChangeEvent" msprop:Generator_RowClassName="WinningHorsesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Horse_Name" msprop:Generator_ColumnVarNameInTable="columnHorse_Name" msprop:Generator_ColumnPropNameInRow="Horse_Name" msprop:Generator_ColumnPropNameInTable="Horse_NameColumn" msprop:Generator_UserColumnName="Horse_Name" minOccurs="0">
@@ -1003,7 +872,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WinningJockeys" msprop:Generator_TableClassName="WinningJockeysDataTable" msprop:Generator_TableVarName="tableWinningJockeys" msprop:Generator_RowChangedName="WinningJockeysRowChanged" msprop:Generator_TablePropName="WinningJockeys" msprop:Generator_RowDeletingName="WinningJockeysRowDeleting" msprop:Generator_RowChangingName="WinningJockeysRowChanging" msprop:Generator_RowEvHandlerName="WinningJockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="WinningJockeysRowDeleted" msprop:Generator_RowClassName="WinningJockeysRow" msprop:Generator_UserTableName="WinningJockeys" msprop:Generator_RowEvArgName="WinningJockeysRowChangeEvent">
+        <xs:element name="WinningJockeys" msprop:Generator_TableClassName="WinningJockeysDataTable" msprop:Generator_TableVarName="tableWinningJockeys" msprop:Generator_TablePropName="WinningJockeys" msprop:Generator_RowDeletingName="WinningJockeysRowDeleting" msprop:Generator_RowChangingName="WinningJockeysRowChanging" msprop:Generator_RowEvHandlerName="WinningJockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="WinningJockeysRowDeleted" msprop:Generator_UserTableName="WinningJockeys" msprop:Generator_RowChangedName="WinningJockeysRowChanged" msprop:Generator_RowEvArgName="WinningJockeysRowChangeEvent" msprop:Generator_RowClassName="WinningJockeysRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Horse_Name" msprop:Generator_ColumnVarNameInTable="columnHorse_Name" msprop:Generator_ColumnPropNameInRow="Horse_Name" msprop:Generator_ColumnPropNameInTable="Horse_NameColumn" msprop:Generator_UserColumnName="Horse_Name" minOccurs="0">
@@ -1037,7 +906,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BetsByGamblerID" msprop:Generator_TableClassName="BetsByGamblerIDDataTable" msprop:Generator_TableVarName="tableBetsByGamblerID" msprop:Generator_TablePropName="BetsByGamblerID" msprop:Generator_RowDeletingName="BetsByGamblerIDRowDeleting" msprop:Generator_RowChangingName="BetsByGamblerIDRowChanging" msprop:Generator_RowEvHandlerName="BetsByGamblerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsByGamblerIDRowDeleted" msprop:Generator_UserTableName="BetsByGamblerID" msprop:Generator_RowChangedName="BetsByGamblerIDRowChanged" msprop:Generator_RowEvArgName="BetsByGamblerIDRowChangeEvent" msprop:Generator_RowClassName="BetsByGamblerIDRow">
+        <xs:element name="BetsByGamblerID" msprop:Generator_TableClassName="BetsByGamblerIDDataTable" msprop:Generator_TableVarName="tableBetsByGamblerID" msprop:Generator_RowChangedName="BetsByGamblerIDRowChanged" msprop:Generator_TablePropName="BetsByGamblerID" msprop:Generator_RowDeletingName="BetsByGamblerIDRowDeleting" msprop:Generator_RowChangingName="BetsByGamblerIDRowChanging" msprop:Generator_RowEvHandlerName="BetsByGamblerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsByGamblerIDRowDeleted" msprop:Generator_RowClassName="BetsByGamblerIDRow" msprop:Generator_UserTableName="BetsByGamblerID" msprop:Generator_RowEvArgName="BetsByGamblerIDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Gambler_Name" msprop:Generator_ColumnVarNameInTable="columnGambler_Name" msprop:Generator_ColumnPropNameInRow="Gambler_Name" msprop:Generator_ColumnPropNameInTable="Gambler_NameColumn" msprop:Generator_UserColumnName="Gambler_Name">
@@ -1072,7 +941,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BetsByGamblerName" msprop:Generator_TableClassName="BetsByGamblerNameDataTable" msprop:Generator_TableVarName="tableBetsByGamblerName" msprop:Generator_TablePropName="BetsByGamblerName" msprop:Generator_RowDeletingName="BetsByGamblerNameRowDeleting" msprop:Generator_RowChangingName="BetsByGamblerNameRowChanging" msprop:Generator_RowEvHandlerName="BetsByGamblerNameRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsByGamblerNameRowDeleted" msprop:Generator_UserTableName="BetsByGamblerName" msprop:Generator_RowChangedName="BetsByGamblerNameRowChanged" msprop:Generator_RowEvArgName="BetsByGamblerNameRowChangeEvent" msprop:Generator_RowClassName="BetsByGamblerNameRow">
+        <xs:element name="BetsByGamblerName" msprop:Generator_TableClassName="BetsByGamblerNameDataTable" msprop:Generator_TableVarName="tableBetsByGamblerName" msprop:Generator_RowChangedName="BetsByGamblerNameRowChanged" msprop:Generator_TablePropName="BetsByGamblerName" msprop:Generator_RowDeletingName="BetsByGamblerNameRowDeleting" msprop:Generator_RowChangingName="BetsByGamblerNameRowChanging" msprop:Generator_RowEvHandlerName="BetsByGamblerNameRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsByGamblerNameRowDeleted" msprop:Generator_RowClassName="BetsByGamblerNameRow" msprop:Generator_UserTableName="BetsByGamblerName" msprop:Generator_RowEvArgName="BetsByGamblerNameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Gambler_Name" msprop:Generator_ColumnVarNameInTable="columnGambler_Name" msprop:Generator_ColumnPropNameInRow="Gambler_Name" msprop:Generator_ColumnPropNameInTable="Gambler_NameColumn" msprop:Generator_UserColumnName="Gambler_Name">
@@ -1107,7 +976,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ParticipantsByRaceID" msprop:Generator_TableClassName="ParticipantsByRaceIDDataTable" msprop:Generator_TableVarName="tableParticipantsByRaceID" msprop:Generator_TablePropName="ParticipantsByRaceID" msprop:Generator_RowDeletingName="ParticipantsByRaceIDRowDeleting" msprop:Generator_RowChangingName="ParticipantsByRaceIDRowChanging" msprop:Generator_RowEvHandlerName="ParticipantsByRaceIDRowChangeEventHandler" msprop:Generator_RowDeletedName="ParticipantsByRaceIDRowDeleted" msprop:Generator_UserTableName="ParticipantsByRaceID" msprop:Generator_RowChangedName="ParticipantsByRaceIDRowChanged" msprop:Generator_RowEvArgName="ParticipantsByRaceIDRowChangeEvent" msprop:Generator_RowClassName="ParticipantsByRaceIDRow">
+        <xs:element name="ParticipantsByRaceID" msprop:Generator_TableClassName="ParticipantsByRaceIDDataTable" msprop:Generator_TableVarName="tableParticipantsByRaceID" msprop:Generator_RowChangedName="ParticipantsByRaceIDRowChanged" msprop:Generator_TablePropName="ParticipantsByRaceID" msprop:Generator_RowDeletingName="ParticipantsByRaceIDRowDeleting" msprop:Generator_RowChangingName="ParticipantsByRaceIDRowChanging" msprop:Generator_RowEvHandlerName="ParticipantsByRaceIDRowChangeEventHandler" msprop:Generator_RowDeletedName="ParticipantsByRaceIDRowDeleted" msprop:Generator_RowClassName="ParticipantsByRaceIDRow" msprop:Generator_UserTableName="ParticipantsByRaceID" msprop:Generator_RowEvArgName="ParticipantsByRaceIDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Jockey_Name" msprop:Generator_ColumnVarNameInTable="columnJockey_Name" msprop:Generator_ColumnPropNameInRow="Jockey_Name" msprop:Generator_ColumnPropNameInTable="Jockey_NameColumn" msprop:Generator_UserColumnName="Jockey_Name">
@@ -1127,7 +996,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ParticipantsByRaceName" msprop:Generator_TableClassName="ParticipantsByRaceNameDataTable" msprop:Generator_TableVarName="tableParticipantsByRaceName" msprop:Generator_TablePropName="ParticipantsByRaceName" msprop:Generator_RowDeletingName="ParticipantsByRaceNameRowDeleting" msprop:Generator_RowChangingName="ParticipantsByRaceNameRowChanging" msprop:Generator_RowEvHandlerName="ParticipantsByRaceNameRowChangeEventHandler" msprop:Generator_RowDeletedName="ParticipantsByRaceNameRowDeleted" msprop:Generator_UserTableName="ParticipantsByRaceName" msprop:Generator_RowChangedName="ParticipantsByRaceNameRowChanged" msprop:Generator_RowEvArgName="ParticipantsByRaceNameRowChangeEvent" msprop:Generator_RowClassName="ParticipantsByRaceNameRow">
+        <xs:element name="ParticipantsByRaceName" msprop:Generator_TableClassName="ParticipantsByRaceNameDataTable" msprop:Generator_TableVarName="tableParticipantsByRaceName" msprop:Generator_RowChangedName="ParticipantsByRaceNameRowChanged" msprop:Generator_TablePropName="ParticipantsByRaceName" msprop:Generator_RowDeletingName="ParticipantsByRaceNameRowDeleting" msprop:Generator_RowChangingName="ParticipantsByRaceNameRowChanging" msprop:Generator_RowEvHandlerName="ParticipantsByRaceNameRowChangeEventHandler" msprop:Generator_RowDeletedName="ParticipantsByRaceNameRowDeleted" msprop:Generator_RowClassName="ParticipantsByRaceNameRow" msprop:Generator_UserTableName="ParticipantsByRaceName" msprop:Generator_RowEvArgName="ParticipantsByRaceNameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Jockey_Name" msprop:Generator_ColumnVarNameInTable="columnJockey_Name" msprop:Generator_ColumnPropNameInRow="Jockey_Name" msprop:Generator_ColumnPropNameInTable="Jockey_NameColumn" msprop:Generator_UserColumnName="Jockey_Name">
@@ -1147,7 +1016,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Bets" msprop:Generator_TableClassName="BetsDataTable" msprop:Generator_TableVarName="tableBets" msprop:Generator_TablePropName="Bets" msprop:Generator_RowDeletingName="BetsRowDeleting" msprop:Generator_RowChangingName="BetsRowChanging" msprop:Generator_RowEvHandlerName="BetsRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsRowDeleted" msprop:Generator_UserTableName="Bets" msprop:Generator_RowChangedName="BetsRowChanged" msprop:Generator_RowEvArgName="BetsRowChangeEvent" msprop:Generator_RowClassName="BetsRow">
+        <xs:element name="Bets" msprop:Generator_TableClassName="BetsDataTable" msprop:Generator_TableVarName="tableBets" msprop:Generator_RowChangedName="BetsRowChanged" msprop:Generator_TablePropName="Bets" msprop:Generator_RowDeletingName="BetsRowDeleting" msprop:Generator_RowChangingName="BetsRowChanging" msprop:Generator_RowEvHandlerName="BetsRowChangeEventHandler" msprop:Generator_RowDeletedName="BetsRowDeleted" msprop:Generator_RowClassName="BetsRow" msprop:Generator_UserTableName="Bets" msprop:Generator_RowEvArgName="BetsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Bet_ID" msprop:Generator_ColumnVarNameInTable="columnBet_ID" msprop:Generator_ColumnPropNameInRow="Bet_ID" msprop:Generator_ColumnPropNameInTable="Bet_IDColumn" msprop:Generator_UserColumnName="Bet_ID" type="xs:int" />
@@ -1172,7 +1041,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Gamblers" msprop:Generator_TableClassName="GamblersDataTable" msprop:Generator_TableVarName="tableGamblers" msprop:Generator_TablePropName="Gamblers" msprop:Generator_RowDeletingName="GamblersRowDeleting" msprop:Generator_RowChangingName="GamblersRowChanging" msprop:Generator_RowEvHandlerName="GamblersRowChangeEventHandler" msprop:Generator_RowDeletedName="GamblersRowDeleted" msprop:Generator_UserTableName="Gamblers" msprop:Generator_RowChangedName="GamblersRowChanged" msprop:Generator_RowEvArgName="GamblersRowChangeEvent" msprop:Generator_RowClassName="GamblersRow">
+        <xs:element name="Gamblers" msprop:Generator_TableClassName="GamblersDataTable" msprop:Generator_TableVarName="tableGamblers" msprop:Generator_RowChangedName="GamblersRowChanged" msprop:Generator_TablePropName="Gamblers" msprop:Generator_RowDeletingName="GamblersRowDeleting" msprop:Generator_RowChangingName="GamblersRowChanging" msprop:Generator_RowEvHandlerName="GamblersRowChangeEventHandler" msprop:Generator_RowDeletedName="GamblersRowDeleted" msprop:Generator_RowClassName="GamblersRow" msprop:Generator_UserTableName="Gamblers" msprop:Generator_RowEvArgName="GamblersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Gambler_ID" msprop:Generator_ColumnVarNameInTable="columnGambler_ID" msprop:Generator_ColumnPropNameInRow="Gambler_ID" msprop:Generator_ColumnPropNameInTable="Gambler_IDColumn" msprop:Generator_UserColumnName="Gambler_ID" type="xs:int" />
@@ -1207,7 +1076,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Horses" msprop:Generator_TableClassName="HorsesDataTable" msprop:Generator_TableVarName="tableHorses" msprop:Generator_TablePropName="Horses" msprop:Generator_RowDeletingName="HorsesRowDeleting" msprop:Generator_RowChangingName="HorsesRowChanging" msprop:Generator_RowEvHandlerName="HorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="HorsesRowDeleted" msprop:Generator_UserTableName="Horses" msprop:Generator_RowChangedName="HorsesRowChanged" msprop:Generator_RowEvArgName="HorsesRowChangeEvent" msprop:Generator_RowClassName="HorsesRow">
+        <xs:element name="Horses" msprop:Generator_TableClassName="HorsesDataTable" msprop:Generator_TableVarName="tableHorses" msprop:Generator_RowChangedName="HorsesRowChanged" msprop:Generator_TablePropName="Horses" msprop:Generator_RowDeletingName="HorsesRowDeleting" msprop:Generator_RowChangingName="HorsesRowChanging" msprop:Generator_RowEvHandlerName="HorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="HorsesRowDeleted" msprop:Generator_RowClassName="HorsesRow" msprop:Generator_UserTableName="Horses" msprop:Generator_RowEvArgName="HorsesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1224,7 +1093,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Jockeys" msprop:Generator_TableClassName="JockeysDataTable" msprop:Generator_TableVarName="tableJockeys" msprop:Generator_TablePropName="Jockeys" msprop:Generator_RowDeletingName="JockeysRowDeleting" msprop:Generator_RowChangingName="JockeysRowChanging" msprop:Generator_RowEvHandlerName="JockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="JockeysRowDeleted" msprop:Generator_UserTableName="Jockeys" msprop:Generator_RowChangedName="JockeysRowChanged" msprop:Generator_RowEvArgName="JockeysRowChangeEvent" msprop:Generator_RowClassName="JockeysRow">
+        <xs:element name="Jockeys" msprop:Generator_TableClassName="JockeysDataTable" msprop:Generator_TableVarName="tableJockeys" msprop:Generator_RowChangedName="JockeysRowChanged" msprop:Generator_TablePropName="Jockeys" msprop:Generator_RowDeletingName="JockeysRowDeleting" msprop:Generator_RowChangingName="JockeysRowChanging" msprop:Generator_RowEvHandlerName="JockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="JockeysRowDeleted" msprop:Generator_RowClassName="JockeysRow" msprop:Generator_UserTableName="Jockeys" msprop:Generator_RowEvArgName="JockeysRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Jockey_ID" msprop:Generator_ColumnVarNameInTable="columnJockey_ID" msprop:Generator_ColumnPropNameInRow="Jockey_ID" msprop:Generator_ColumnPropNameInTable="Jockey_IDColumn" msprop:Generator_UserColumnName="Jockey_ID" type="xs:int" />
@@ -1241,7 +1110,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Races" msprop:Generator_TableClassName="RacesDataTable" msprop:Generator_TableVarName="tableRaces" msprop:Generator_TablePropName="Races" msprop:Generator_RowDeletingName="RacesRowDeleting" msprop:Generator_RowChangingName="RacesRowChanging" msprop:Generator_RowEvHandlerName="RacesRowChangeEventHandler" msprop:Generator_RowDeletedName="RacesRowDeleted" msprop:Generator_UserTableName="Races" msprop:Generator_RowChangedName="RacesRowChanged" msprop:Generator_RowEvArgName="RacesRowChangeEvent" msprop:Generator_RowClassName="RacesRow">
+        <xs:element name="Races" msprop:Generator_TableClassName="RacesDataTable" msprop:Generator_TableVarName="tableRaces" msprop:Generator_RowChangedName="RacesRowChanged" msprop:Generator_TablePropName="Races" msprop:Generator_RowDeletingName="RacesRowDeleting" msprop:Generator_RowChangingName="RacesRowChanging" msprop:Generator_RowEvHandlerName="RacesRowChangeEventHandler" msprop:Generator_RowDeletedName="RacesRowDeleted" msprop:Generator_RowClassName="RacesRow" msprop:Generator_UserTableName="Races" msprop:Generator_RowEvArgName="RacesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Race_ID" msprop:Generator_ColumnVarNameInTable="columnRace_ID" msprop:Generator_ColumnPropNameInRow="Race_ID" msprop:Generator_ColumnPropNameInTable="Race_IDColumn" msprop:Generator_UserColumnName="Race_ID" type="xs:int" />
@@ -1285,7 +1154,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rides" msprop:Generator_TableClassName="RidesDataTable" msprop:Generator_TableVarName="tableRides" msprop:Generator_TablePropName="Rides" msprop:Generator_RowDeletingName="RidesRowDeleting" msprop:Generator_RowChangingName="RidesRowChanging" msprop:Generator_RowEvHandlerName="RidesRowChangeEventHandler" msprop:Generator_RowDeletedName="RidesRowDeleted" msprop:Generator_UserTableName="Rides" msprop:Generator_RowChangedName="RidesRowChanged" msprop:Generator_RowEvArgName="RidesRowChangeEvent" msprop:Generator_RowClassName="RidesRow">
+        <xs:element name="Rides" msprop:Generator_TableClassName="RidesDataTable" msprop:Generator_TableVarName="tableRides" msprop:Generator_RowChangedName="RidesRowChanged" msprop:Generator_TablePropName="Rides" msprop:Generator_RowDeletingName="RidesRowDeleting" msprop:Generator_RowChangingName="RidesRowChanging" msprop:Generator_RowEvHandlerName="RidesRowChangeEventHandler" msprop:Generator_RowDeletedName="RidesRowDeleted" msprop:Generator_RowClassName="RidesRow" msprop:Generator_UserTableName="Rides" msprop:Generator_RowEvArgName="RidesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Jockey_ID" msprop:Generator_ColumnVarNameInTable="columnJockey_ID" msprop:Generator_ColumnPropNameInRow="Jockey_ID" msprop:Generator_ColumnPropNameInTable="Jockey_IDColumn" msprop:Generator_UserColumnName="Jockey_ID" type="xs:int" />
@@ -1300,7 +1169,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Tracks" msprop:Generator_TableClassName="TracksDataTable" msprop:Generator_TableVarName="tableTracks" msprop:Generator_TablePropName="Tracks" msprop:Generator_RowDeletingName="TracksRowDeleting" msprop:Generator_RowChangingName="TracksRowChanging" msprop:Generator_RowEvHandlerName="TracksRowChangeEventHandler" msprop:Generator_RowDeletedName="TracksRowDeleted" msprop:Generator_UserTableName="Tracks" msprop:Generator_RowChangedName="TracksRowChanged" msprop:Generator_RowEvArgName="TracksRowChangeEvent" msprop:Generator_RowClassName="TracksRow">
+        <xs:element name="Tracks" msprop:Generator_TableClassName="TracksDataTable" msprop:Generator_TableVarName="tableTracks" msprop:Generator_RowChangedName="TracksRowChanged" msprop:Generator_TablePropName="Tracks" msprop:Generator_RowDeletingName="TracksRowDeleting" msprop:Generator_RowChangingName="TracksRowChanging" msprop:Generator_RowEvHandlerName="TracksRowChangeEventHandler" msprop:Generator_RowDeletedName="TracksRowDeleted" msprop:Generator_RowClassName="TracksRow" msprop:Generator_UserTableName="Tracks" msprop:Generator_RowEvArgName="TracksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1327,7 +1196,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Top10Horses" msprop:Generator_TableClassName="Top10HorsesDataTable" msprop:Generator_TableVarName="tableTop10Horses" msprop:Generator_TablePropName="Top10Horses" msprop:Generator_RowDeletingName="Top10HorsesRowDeleting" msprop:Generator_RowChangingName="Top10HorsesRowChanging" msprop:Generator_RowEvHandlerName="Top10HorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10HorsesRowDeleted" msprop:Generator_UserTableName="Top10Horses" msprop:Generator_RowChangedName="Top10HorsesRowChanged" msprop:Generator_RowEvArgName="Top10HorsesRowChangeEvent" msprop:Generator_RowClassName="Top10HorsesRow">
+        <xs:element name="Top10Horses" msprop:Generator_TableClassName="Top10HorsesDataTable" msprop:Generator_TableVarName="tableTop10Horses" msprop:Generator_RowChangedName="Top10HorsesRowChanged" msprop:Generator_TablePropName="Top10Horses" msprop:Generator_RowDeletingName="Top10HorsesRowDeleting" msprop:Generator_RowChangingName="Top10HorsesRowChanging" msprop:Generator_RowEvHandlerName="Top10HorsesRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10HorsesRowDeleted" msprop:Generator_RowClassName="Top10HorsesRow" msprop:Generator_UserTableName="Top10Horses" msprop:Generator_RowEvArgName="Top10HorsesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1344,7 +1213,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Top10Jockeys" msprop:Generator_TableClassName="Top10JockeysDataTable" msprop:Generator_TableVarName="tableTop10Jockeys" msprop:Generator_TablePropName="Top10Jockeys" msprop:Generator_RowDeletingName="Top10JockeysRowDeleting" msprop:Generator_RowChangingName="Top10JockeysRowChanging" msprop:Generator_RowEvHandlerName="Top10JockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10JockeysRowDeleted" msprop:Generator_UserTableName="Top10Jockeys" msprop:Generator_RowChangedName="Top10JockeysRowChanged" msprop:Generator_RowEvArgName="Top10JockeysRowChangeEvent" msprop:Generator_RowClassName="Top10JockeysRow">
+        <xs:element name="Top10Jockeys" msprop:Generator_TableClassName="Top10JockeysDataTable" msprop:Generator_TableVarName="tableTop10Jockeys" msprop:Generator_RowChangedName="Top10JockeysRowChanged" msprop:Generator_TablePropName="Top10Jockeys" msprop:Generator_RowDeletingName="Top10JockeysRowDeleting" msprop:Generator_RowChangingName="Top10JockeysRowChanging" msprop:Generator_RowEvHandlerName="Top10JockeysRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10JockeysRowDeleted" msprop:Generator_RowClassName="Top10JockeysRow" msprop:Generator_UserTableName="Top10Jockeys" msprop:Generator_RowEvArgName="Top10JockeysRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1360,7 +1229,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Top10BetAmounts" msprop:Generator_TableClassName="Top10BetAmountsDataTable" msprop:Generator_TableVarName="tableTop10BetAmounts" msprop:Generator_TablePropName="Top10BetAmounts" msprop:Generator_RowDeletingName="Top10BetAmountsRowDeleting" msprop:Generator_RowChangingName="Top10BetAmountsRowChanging" msprop:Generator_RowEvHandlerName="Top10BetAmountsRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10BetAmountsRowDeleted" msprop:Generator_UserTableName="Top10BetAmounts" msprop:Generator_RowChangedName="Top10BetAmountsRowChanged" msprop:Generator_RowEvArgName="Top10BetAmountsRowChangeEvent" msprop:Generator_RowClassName="Top10BetAmountsRow">
+        <xs:element name="Top10BetAmounts" msprop:Generator_TableClassName="Top10BetAmountsDataTable" msprop:Generator_TableVarName="tableTop10BetAmounts" msprop:Generator_RowChangedName="Top10BetAmountsRowChanged" msprop:Generator_TablePropName="Top10BetAmounts" msprop:Generator_RowDeletingName="Top10BetAmountsRowDeleting" msprop:Generator_RowChangingName="Top10BetAmountsRowChanging" msprop:Generator_RowEvHandlerName="Top10BetAmountsRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10BetAmountsRowDeleted" msprop:Generator_RowClassName="Top10BetAmountsRow" msprop:Generator_UserTableName="Top10BetAmounts" msprop:Generator_RowEvArgName="Top10BetAmountsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
@@ -1389,7 +1258,7 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Top10Payouts" msprop:Generator_TableClassName="Top10PayoutsDataTable" msprop:Generator_TableVarName="tableTop10Payouts" msprop:Generator_TablePropName="Top10Payouts" msprop:Generator_RowDeletingName="Top10PayoutsRowDeleting" msprop:Generator_RowChangingName="Top10PayoutsRowChanging" msprop:Generator_RowEvHandlerName="Top10PayoutsRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10PayoutsRowDeleted" msprop:Generator_UserTableName="Top10Payouts" msprop:Generator_RowChangedName="Top10PayoutsRowChanged" msprop:Generator_RowEvArgName="Top10PayoutsRowChangeEvent" msprop:Generator_RowClassName="Top10PayoutsRow">
+        <xs:element name="Top10Payouts" msprop:Generator_TableClassName="Top10PayoutsDataTable" msprop:Generator_TableVarName="tableTop10Payouts" msprop:Generator_RowChangedName="Top10PayoutsRowChanged" msprop:Generator_TablePropName="Top10Payouts" msprop:Generator_RowDeletingName="Top10PayoutsRowDeleting" msprop:Generator_RowChangingName="Top10PayoutsRowChanging" msprop:Generator_RowEvHandlerName="Top10PayoutsRowChangeEventHandler" msprop:Generator_RowDeletedName="Top10PayoutsRowDeleted" msprop:Generator_RowClassName="Top10PayoutsRow" msprop:Generator_UserTableName="Top10Payouts" msprop:Generator_RowEvArgName="Top10PayoutsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Payout" msprop:Generator_ColumnVarNameInTable="columnPayout" msprop:Generator_ColumnPropNameInRow="Payout" msprop:Generator_ColumnPropNameInTable="PayoutColumn" msprop:Generator_UserColumnName="Payout" type="xs:int" minOccurs="0" />
@@ -1420,10 +1289,6 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:RaceTrackView" />
-      <xs:field xpath="mstns:TrackName" />
-    </xs:unique>
-    <xs:unique name="RidesInRacesView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:RidesInRacesView" />
       <xs:field xpath="mstns:Jockey_ID" />
       <xs:field xpath="mstns:Race_ID" />
@@ -1468,16 +1333,16 @@ SELECT Name, City, State FROM Tracks WHERE (Name = @Name)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Bets__Gambler_ID__6AEFE058" msdata:parent="Gamblers" msdata:child="Bets" msdata:parentkey="Gambler_ID" msdata:childkey="Gambler_ID" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Gambler_ID__6AEFE058" msprop:Generator_RelationVarName="relationFK__Bets__Gambler_ID__6AEFE058" msprop:Generator_UserParentTable="Gamblers" msprop:Generator_ParentPropName="GamblersRow" />
-      <msdata:Relationship name="FK__Bets__Horse_Name__690797E6" msdata:parent="Horses" msdata:child="Bets" msdata:parentkey="Name" msdata:childkey="Horse_Name" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Horse_Name__690797E6" msprop:Generator_RelationVarName="relationFK__Bets__Horse_Name__690797E6" msprop:Generator_UserParentTable="Horses" msprop:Generator_ParentPropName="HorsesRow" />
-      <msdata:Relationship name="FK__Bets__Race_ID__69FBBC1F" msdata:parent="Races" msdata:child="Bets" msdata:parentkey="Race_ID" msdata:childkey="Race_ID" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Race_ID__69FBBC1F" msprop:Generator_RelationVarName="relationFK__Bets__Race_ID__69FBBC1F" msprop:Generator_UserParentTable="Races" msprop:Generator_ParentPropName="RacesRow" />
-      <msdata:Relationship name="FK__Races__Place__6442E2C9" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Place" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Place__6442E2C9" msprop:Generator_UserRelationName="FK__Races__Place__6442E2C9" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Place__6442E2C9" msprop:Generator_RelationVarName="relationFK__Races__Place__6442E2C9" msprop:Generator_UserParentTable="Horses" />
-      <msdata:Relationship name="FK__Races__Show__65370702" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Show" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Show__65370702" msprop:Generator_UserRelationName="FK__Races__Show__65370702" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Show__65370702" msprop:Generator_RelationVarName="relationFK__Races__Show__65370702" msprop:Generator_UserParentTable="Horses" />
-      <msdata:Relationship name="FK__Races__Track_Nam__662B2B3B" msdata:parent="Tracks" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Track_Name" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRows" msprop:Generator_UserRelationName="FK__Races__Track_Nam__662B2B3B" msprop:Generator_RelationVarName="relationFK__Races__Track_Nam__662B2B3B" msprop:Generator_UserParentTable="Tracks" msprop:Generator_ParentPropName="TracksRow" />
-      <msdata:Relationship name="FK__Races__Win__634EBE90" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Win" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Win__634EBE90" msprop:Generator_UserRelationName="FK__Races__Win__634EBE90" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Win__634EBE90" msprop:Generator_RelationVarName="relationFK__Races__Win__634EBE90" msprop:Generator_UserParentTable="Horses" />
-      <msdata:Relationship name="FK__Rides__Horse_Nam__6DCC4D03" msdata:parent="Horses" msdata:child="Rides" msdata:parentkey="Name" msdata:childkey="Horse_Name" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Horse_Nam__6DCC4D03" msprop:Generator_ParentPropName="HorsesRow" msprop:Generator_RelationVarName="relationFK__Rides__Horse_Nam__6DCC4D03" msprop:Generator_UserParentTable="Horses" />
-      <msdata:Relationship name="FK__Rides__Jockey_ID__6CD828CA" msdata:parent="Jockeys" msdata:child="Rides" msdata:parentkey="Jockey_ID" msdata:childkey="Jockey_ID" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Jockey_ID__6CD828CA" msprop:Generator_ParentPropName="JockeysRow" msprop:Generator_RelationVarName="relationFK__Rides__Jockey_ID__6CD828CA" msprop:Generator_UserParentTable="Jockeys" />
-      <msdata:Relationship name="FK__Rides__Race_ID__6EC0713C" msdata:parent="Races" msdata:child="Rides" msdata:parentkey="Race_ID" msdata:childkey="Race_ID" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Race_ID__6EC0713C" msprop:Generator_ParentPropName="RacesRow" msprop:Generator_RelationVarName="relationFK__Rides__Race_ID__6EC0713C" msprop:Generator_UserParentTable="Races" />
+      <msdata:Relationship name="FK__Bets__Gambler_ID__6AEFE058" msdata:parent="Gamblers" msdata:child="Bets" msdata:parentkey="Gambler_ID" msdata:childkey="Gambler_ID" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Gambler_ID__6AEFE058" msprop:Generator_ParentPropName="GamblersRow" msprop:Generator_RelationVarName="relationFK__Bets__Gambler_ID__6AEFE058" msprop:Generator_UserParentTable="Gamblers" />
+      <msdata:Relationship name="FK__Bets__Horse_Name__690797E6" msdata:parent="Horses" msdata:child="Bets" msdata:parentkey="Name" msdata:childkey="Horse_Name" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Horse_Name__690797E6" msprop:Generator_ParentPropName="HorsesRow" msprop:Generator_RelationVarName="relationFK__Bets__Horse_Name__690797E6" msprop:Generator_UserParentTable="Horses" />
+      <msdata:Relationship name="FK__Bets__Race_ID__69FBBC1F" msdata:parent="Races" msdata:child="Bets" msdata:parentkey="Race_ID" msdata:childkey="Race_ID" msprop:Generator_UserChildTable="Bets" msprop:Generator_ChildPropName="GetBetsRows" msprop:Generator_UserRelationName="FK__Bets__Race_ID__69FBBC1F" msprop:Generator_ParentPropName="RacesRow" msprop:Generator_RelationVarName="relationFK__Bets__Race_ID__69FBBC1F" msprop:Generator_UserParentTable="Races" />
+      <msdata:Relationship name="FK__Races__Place__6442E2C9" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Place" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Place__6442E2C9" msprop:Generator_UserRelationName="FK__Races__Place__6442E2C9" msprop:Generator_RelationVarName="relationFK__Races__Place__6442E2C9" msprop:Generator_UserParentTable="Horses" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Place__6442E2C9" />
+      <msdata:Relationship name="FK__Races__Show__65370702" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Show" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Show__65370702" msprop:Generator_UserRelationName="FK__Races__Show__65370702" msprop:Generator_RelationVarName="relationFK__Races__Show__65370702" msprop:Generator_UserParentTable="Horses" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Show__65370702" />
+      <msdata:Relationship name="FK__Races__Track_Nam__662B2B3B" msdata:parent="Tracks" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Track_Name" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRows" msprop:Generator_UserRelationName="FK__Races__Track_Nam__662B2B3B" msprop:Generator_ParentPropName="TracksRow" msprop:Generator_RelationVarName="relationFK__Races__Track_Nam__662B2B3B" msprop:Generator_UserParentTable="Tracks" />
+      <msdata:Relationship name="FK__Races__Win__634EBE90" msdata:parent="Horses" msdata:child="Races" msdata:parentkey="Name" msdata:childkey="Win" msprop:Generator_UserChildTable="Races" msprop:Generator_ChildPropName="GetRacesRowsByFK__Races__Win__634EBE90" msprop:Generator_UserRelationName="FK__Races__Win__634EBE90" msprop:Generator_RelationVarName="relationFK__Races__Win__634EBE90" msprop:Generator_UserParentTable="Horses" msprop:Generator_ParentPropName="HorsesRowByFK__Races__Win__634EBE90" />
+      <msdata:Relationship name="FK__Rides__Horse_Nam__6DCC4D03" msdata:parent="Horses" msdata:child="Rides" msdata:parentkey="Name" msdata:childkey="Horse_Name" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Horse_Nam__6DCC4D03" msprop:Generator_RelationVarName="relationFK__Rides__Horse_Nam__6DCC4D03" msprop:Generator_UserParentTable="Horses" msprop:Generator_ParentPropName="HorsesRow" />
+      <msdata:Relationship name="FK__Rides__Jockey_ID__6CD828CA" msdata:parent="Jockeys" msdata:child="Rides" msdata:parentkey="Jockey_ID" msdata:childkey="Jockey_ID" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Jockey_ID__6CD828CA" msprop:Generator_RelationVarName="relationFK__Rides__Jockey_ID__6CD828CA" msprop:Generator_UserParentTable="Jockeys" msprop:Generator_ParentPropName="JockeysRow" />
+      <msdata:Relationship name="FK__Rides__Race_ID__6EC0713C" msdata:parent="Races" msdata:child="Rides" msdata:parentkey="Race_ID" msdata:childkey="Race_ID" msprop:Generator_UserChildTable="Rides" msprop:Generator_ChildPropName="GetRidesRows" msprop:Generator_UserRelationName="FK__Rides__Race_ID__6EC0713C" msprop:Generator_RelationVarName="relationFK__Rides__Race_ID__6EC0713C" msprop:Generator_UserParentTable="Races" msprop:Generator_ParentPropName="RacesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
