@@ -44,6 +44,16 @@ namespace DatabasesGUI
 
             switch (comboBoxSelection)
             {
+                case "Top10Jockeys":
+                    HorseRacingDataSetTableAdapters.Top10JockeysAdapter top10JockeysAdapter = new HorseRacingDataSetTableAdapters.Top10JockeysTableAdapter();
+                    HorseRacingDataSet.WinningHorsesDataTable Top10JockeysData = top10JockeysAdapter.GetData();
+                    storedProcedureResultsTableView.DataSource = Top10JockeysData;
+                    break;
+                case "Top10Horses":
+                    HorseRacingDataSetTableAdapters.Top10HorsesAdapter top10HorsesAdapter = new HorseRacingDataSetTableAdapters.Top10HorsesTableAdapter();
+                    HorseRacingDataSet.WinningHorsesDataTable Top10HorsesData = top10HorsesAdapter.GetData();
+                    storedProcedureResultsTableView.DataSource = Top10JHorsesData;
+                    break;
                 case "WinningHorses":
                     HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter winningHorsesAdapter = new HorseRacingDataSetTableAdapters.WinningHorsesTableAdapter();
                     HorseRacingDataSet.WinningHorsesDataTable winningHorsesData = winningHorsesAdapter.GetData();
@@ -203,6 +213,14 @@ namespace DatabasesGUI
                 case "BetsByGamblerName":
                     storedProcedureParameterTextBox.Text = "Enter a GamblerName";
                     storedProcedureParameterTextBox.Enabled = true;
+                    break;
+                case "Top10Jockeys":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
+                case "Top10Horses":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
                     break;
                 default:
                     break;
@@ -1123,6 +1141,8 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Bets by gambler name", value = "BetsByGamblerName" });
             dataSource.Add(new Language() { name = "Paricipants in race by RaceID", value = "ParticipantsByRaceID" });
             dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsByGamblerID" });
+            dataSource.Add(new Language() { name = "Top 10 Jockeys", value = "Top10Jockeys" });
+            dataSource.Add(new Language() { name = "Top 10 Horses", value = "Top10Horses" });
 
             storedProcedureComboBox.DataSource = dataSource;
             storedProcedureComboBox.DisplayMember = "name";
