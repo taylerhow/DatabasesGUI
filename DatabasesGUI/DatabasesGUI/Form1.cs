@@ -717,6 +717,9 @@ namespace DatabasesGUI
             attributeConditionTextBoxes.Add(updateAttribute7ConditionTextBox);
             attributeConditionTextBoxes.Add(updateAttribute8ConditionTextBox);
 
+            for (int i = 0; i < attributeConditionTextBoxes.Count; i++) attributeConditionTextBoxes[i].Text = "";
+            for (int i = 0; i < attributeTextBoxes.Count; i++) attributeTextBoxes[i].Text = "";
+
             String selectedTable = updateTableSelectionComboBox.SelectedValue.ToString();
             updateActiveTextBoxes.Clear();
             updateActiveConditionTextBoxes.Clear();
