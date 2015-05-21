@@ -730,7 +730,6 @@ namespace DatabasesGUI
                     }
                     break;
                 default:
-                    Console.WriteLine("Running default case...");
                     using (SqlConnection _con = new SqlConnection(DBconnectionString))
                     {
                         string queryStatement = "INSERT INTO " + tableToInsertInto + "\nVALUES(";
@@ -743,7 +742,6 @@ namespace DatabasesGUI
                             }
                         }
                         queryStatement += ");";
-                        Console.WriteLine(queryStatement);
                         using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                         {
                             try
@@ -1051,7 +1049,6 @@ namespace DatabasesGUI
             //Sync insert/update username & password text boxes for convenience
             insertUsernameTextBox.Text = username;
             insertPasswordTextBox.Text = password;
-            Console.WriteLine("Active Boxes: " + updateActiveConditionTextBoxes.Count);
 
             using (SqlConnection _con = new SqlConnection(DBconnectionString))
             {
@@ -1180,7 +1177,6 @@ namespace DatabasesGUI
                         {
                             if (updateActiveConditionTextBoxes[j].Text != "")
                             {
-                                Console.WriteLine(updateActiveConditionTextBoxes.Count);
                                 queryStatement += " " + horsesData.Columns[j].ColumnName + "=" + "'" + RemoveSpecialCharacters(updateActiveConditionTextBoxes[j].Text) + "' AND";
                             }
                         }
@@ -1190,7 +1186,6 @@ namespace DatabasesGUI
                 }
                 if (queryStatement.EndsWith("AND")) queryStatement = queryStatement.Substring(0, queryStatement.Length - 4);
                 queryStatement += ";";
-                Console.WriteLine(queryStatement);
                 using (SqlCommand _cmd = new SqlCommand(queryStatement, _con))
                 {
                     try
