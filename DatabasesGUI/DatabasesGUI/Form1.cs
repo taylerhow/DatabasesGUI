@@ -44,6 +44,16 @@ namespace DatabasesGUI
 
             switch (comboBoxSelection)
             {
+                case "HorsesWithoutBets":
+                    HorseRacingDataSetTableAdapters.HorsesWithoutBetsTableAdapter horsesWithoutBetsAdaptor = new HorseRacingDataSetTableAdapters.HorsesWithoutBetsTableAdapter();
+                    HorseRacingDataSet.HorsesWithoutBetsDataTable horsesWithoutBetsData = horsesWithoutBetsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = horsesWithoutBetsData;
+                    break;
+                case "HorsesWithBets":
+                    HorseRacingDataSetTableAdapters.HorsesWithBetsTableAdapter horsesWithBetsAdaptor = new HorseRacingDataSetTableAdapters.HorsesWithBetsTableAdapter();
+                    HorseRacingDataSet.HorsesWithBetsDataTable HorsesWithBetsData = horsesWithBetsAdaptor.GetData();
+                    storedProcedureResultsTableView.DataSource = HorsesWithBetsData;
+                    break;
                 case "Top10Payouts":
                     HorseRacingDataSetTableAdapters.Top10PayoutsTableAdapter top10PayoutsAdaptor = new HorseRacingDataSetTableAdapters.Top10PayoutsTableAdapter();
                     HorseRacingDataSet.Top10PayoutsDataTable Top10PayoutsData = top10PayoutsAdaptor.GetData();
@@ -201,6 +211,10 @@ namespace DatabasesGUI
             String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
             {
+                case "HorsesWithoutBets":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "HorsesWithBets":
                     storedProcedureParameterTextBox.Text = "No Parameters Required";
                     storedProcedureParameterTextBox.Enabled = false;
@@ -1185,6 +1199,7 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Top 10 Bet Amounts", value = "Top10BetAmouts " });
             dataSource.Add(new Language() { name = "Top 10 Payouts", value = "Top10Payouts" });
             dataSource.Add(new Language() { name = "Horses with Bets Placed on Them", value = "HorsesWithBets" });
+            dataSource.Add(new Language() { name = "Horses without Bets Place on Them", value = "HorsesWithoutBets" });
 
 
             storedProcedureComboBox.DataSource = dataSource;
