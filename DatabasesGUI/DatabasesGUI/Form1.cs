@@ -525,6 +525,8 @@ namespace DatabasesGUI
             string username = insertUsernameTextBox.Text;
             string password = insertPasswordTextBox.Text;
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + RemoveSpecialCharacters(username) + ";Password=" + RemoveSpecialCharacters(password);
+            insertErrorLabel.Text = "";
+            updateErrorLabel.Text = "";
 
             //Sync insert/update username & password text boxes for convenience
             updateUsernameTextBox.Text = username;
@@ -1045,6 +1047,8 @@ namespace DatabasesGUI
             string password = updatePasswordTextBox.Text;
             string DBconnectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=" + username + ";Password=" + password;
             String tableToInsertInto = updateTableSelectionComboBox.SelectedValue.ToString();
+            insertErrorLabel.Text = "";
+            updateErrorLabel.Text = "";
 
             //Sync insert/update username & password text boxes for convenience
             insertUsernameTextBox.Text = username;
@@ -1317,6 +1321,10 @@ namespace DatabasesGUI
             insertAttribute6TextBox.Visible = false;
             insertAttribute7TextBox.Visible = false;
             insertAttribute8TextBox.Visible = false;
+
+            insertErrorLabel.Text = "";
+            insertErrorLabel.MaximumSize = new Size(500, 300);
+            insertErrorLabel.ForeColor = System.Drawing.Color.Red;
         }
 
         public void setupUpdateDataTab()
@@ -1377,6 +1385,10 @@ namespace DatabasesGUI
             updateAttribute6ConditionTextBox.Visible = false;
             updateAttribute7ConditionTextBox.Visible = false;
             updateAttribute8ConditionTextBox.Visible = false;
+
+            updateErrorLabel.Text = "";
+            updateErrorLabel.MaximumSize = new Size(500, 300);
+            updateErrorLabel.ForeColor = System.Drawing.Color.Red;
         }
 
         public static object RemoveSpecialCharacters(string str)
@@ -1388,10 +1400,25 @@ namespace DatabasesGUI
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
             {
-                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_' || c == ' ' || c == '/' || c == '@')
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_' || c == ' ' || c == '/' || c == '@' || c == '-')
                 {
                     sb.Append(c);
                 }
+            }
+            return sb.ToString();
+        }
+
+        public static string ParseErrorMessage(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if (c == '^')
+                {
+                    return sb.ToString();
+                }
+                sb.Append(c);
+
             }
             return sb.ToString();
         }
@@ -1401,22 +1428,28 @@ namespace DatabasesGUI
             switch (exception.Number)
             {
                 case 18456:
-                    Console.WriteLine("Invalid username/password combination!");
+                    insertErrorLabel.Text = "Invalid username/password combination!";
+                    updateErrorLabel.Text = "Invalid username/password combination!";
                     break;
                 case 2627:
-                    Console.WriteLine("Cannot insert duplicate element into table!");
+                    insertErrorLabel.Text = "Cannot insert duplicate element into table!";
+                    updateErrorLabel.Text = "Cannot insert duplicate element into table!";
                     break;
                 case 547:
-                    Console.WriteLine("Invalid input! Violating Foreign Key constraints!");
+                    insertErrorLabel.Text = "Invalid input! Violating Foreign Key constraints!";
+                    updateErrorLabel.Text = "Invalid input! Violating Foreign Key constraints!";
                     break;
                 case 102:
-                    Console.WriteLine("Incorrect Syntax!");
+                    insertErrorLabel.Text = "Incorrect Syntax!";
+                    updateErrorLabel.Text = "Incorrect Syntax!";
                     break;
                 case 50000:
-                    Console.WriteLine(exception.Message);
+                    insertErrorLabel.Text = ParseErrorMessage(exception.Message);
+                    updateErrorLabel.Text = ParseErrorMessage(exception.Message);
                     break;
                 default:
-                    Console.WriteLine(exception.Number);
+                    insertErrorLabel.Text = "Exception Number: " + exception.Number;
+                    updateErrorLabel.Text = "Exception Number: " + exception.Number;
                     break;
             }
         }

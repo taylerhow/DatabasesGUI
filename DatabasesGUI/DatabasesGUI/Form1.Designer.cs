@@ -121,6 +121,8 @@
             this.updateAttribute1ConditionTextBox = new System.Windows.Forms.TextBox();
             this.horseRacingDataSet = new DatabasesGUI.HorseRacingDataSet();
             this.horseRacingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.insertErrorLabel = new System.Windows.Forms.Label();
+            this.updateErrorLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.viewDataTabControl.SuspendLayout();
@@ -382,6 +384,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.insertErrorLabel);
             this.tabPage2.Controls.Add(this.insertPasswordTextBox);
             this.tabPage2.Controls.Add(this.insertUsernameTextBox);
             this.tabPage2.Controls.Add(this.label2);
@@ -604,6 +607,7 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.updateErrorLabel);
             this.tabPage11.Controls.Add(this.label5);
             this.tabPage11.Controls.Add(this.label4);
             this.tabPage11.Controls.Add(this.label3);
@@ -1007,6 +1011,24 @@
             this.horseRacingDataSetBindingSource.DataSource = this.horseRacingDataSet;
             this.horseRacingDataSetBindingSource.Position = 0;
             // 
+            // insertErrorLabel
+            // 
+            this.insertErrorLabel.AutoSize = true;
+            this.insertErrorLabel.Location = new System.Drawing.Point(231, 7);
+            this.insertErrorLabel.Name = "insertErrorLabel";
+            this.insertErrorLabel.Size = new System.Drawing.Size(43, 17);
+            this.insertErrorLabel.TabIndex = 23;
+            this.insertErrorLabel.Text = "Error!";
+            // 
+            // updateErrorLabel
+            // 
+            this.updateErrorLabel.AutoSize = true;
+            this.updateErrorLabel.Location = new System.Drawing.Point(233, 13);
+            this.updateErrorLabel.Name = "updateErrorLabel";
+            this.updateErrorLabel.Size = new System.Drawing.Size(43, 17);
+            this.updateErrorLabel.TabIndex = 61;
+            this.updateErrorLabel.Text = "Error!";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1140,6 +1162,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox updatePasswordTextBox;
         private System.Windows.Forms.TextBox updateUsernameTextBox;
+        private System.Windows.Forms.Label insertErrorLabel;
+        private System.Windows.Forms.Label updateErrorLabel;
     }
 }
 
