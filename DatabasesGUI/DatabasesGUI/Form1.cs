@@ -201,6 +201,10 @@ namespace DatabasesGUI
             String value = storedProcedureComboBox.SelectedValue.ToString();
             switch (value)
             {
+                case "HorsesWithBets":
+                    storedProcedureParameterTextBox.Text = "No Parameters Required";
+                    storedProcedureParameterTextBox.Enabled = false;
+                    break;
                 case "AllHorses":
                     storedProcedureParameterTextBox.Text = "No Parameters Required";
                     storedProcedureParameterTextBox.Enabled = false;
@@ -1180,6 +1184,7 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Top 10 Horses", value = "Top10Horses" });
             dataSource.Add(new Language() { name = "Top 10 Bet Amounts", value = "Top10BetAmouts " });
             dataSource.Add(new Language() { name = "Top 10 Payouts", value = "Top10Payouts" });
+            dataSource.Add(new Language() { name = "Horses with Bets Placed on Them", value = "HorsesWithBets" });
 
 
             storedProcedureComboBox.DataSource = dataSource;
