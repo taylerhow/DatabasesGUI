@@ -277,6 +277,11 @@ namespace DatabasesGUI
             attributeTextBoxes.Add(insertAttribute7TextBox);
             attributeTextBoxes.Add(insertAttribute8TextBox);
 
+            for (int i = 0; i < attributeTextBoxes.Count; i++)
+            {
+                attributeTextBoxes[i].Text = "";
+            }
+
             String selectedTable = insertTableSelectionComboBox.SelectedValue.ToString();
             insertActiveTextBoxes.Clear();
 
