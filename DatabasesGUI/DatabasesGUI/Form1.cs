@@ -1317,6 +1317,9 @@ namespace DatabasesGUI
                 case 102:
                     Console.WriteLine("Incorrect Syntax!");
                     break;
+                case 50000:
+                    Console.WriteLine(exception.Message);
+                    break;
                 default:
                     Console.WriteLine(exception.Number);
                     break;
@@ -1361,26 +1364,3 @@ public class Language
     public string name { get; set; }
     public string value { get; set; }
 }
-
-//Access DB programatically
-/*
-            string connectionString = "Data Source=titan.csse.rose-hulman.edu;Initial Catalog=HorseRacing;User ID=howtc;Password=sqlpasswordhowtc";
-
-            using(SqlConnection _con = new SqlConnection(connectionString))
-            {
-                string queryStatement = "SELECT TOP 5 * FROM dbo.Jockeys ORDER BY Jockey_ID";
-
-                using(SqlCommand _cmd = new SqlCommand(queryStatement, _con))
-                {
-                    DataTable jockeyTable = new DataTable("Top5Jockeys");
-
-                    SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
-
-                    _con.Open();
-                    _dap.Fill(jockeyTable);
-                    _con.Close();
-
-                    dataGridView8.DataSource = jockeyTable;
-                }
-            }
-*/
