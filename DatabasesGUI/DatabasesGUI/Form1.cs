@@ -1170,7 +1170,7 @@ namespace DatabasesGUI
             dataSource.Add(new Language() { name = "Bets by GamlberID", value = "BetsByGamblerID" });
             dataSource.Add(new Language() { name = "Top 10 Jockeys", value = "Top10Jockeys" });
             dataSource.Add(new Language() { name = "Top 10 Horses", value = "Top10Horses" });
-            dataSource.Add(new Language() { name = "Top 10 Bet Amounts, value = Top10BetAmouts " });
+            dataSource.Add(new Language() { name = "Top 10 Bet Amounts", value = "Top10BetAmouts " });
             dataSource.Add(new Language() { name = "Top 10 Payouts", value = "Top10Payouts" });
 
 
